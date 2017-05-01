@@ -1,0 +1,38 @@
+*
+{
+    margin: 0 auto;
+}
+
+
+body
+{
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+#header
+{
+    height: 100px;
+}
+
+#winston-image
+{
+    width: 600px;
+    height: 400px;
+    background-image: url("./winston.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#comment
+{
+    width: 600px;
+    font-size: 24px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+    
