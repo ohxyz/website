@@ -21,23 +21,47 @@
     </script>
 </head>
 <body>
-    <header>
-        <div id="logo"></div>
-    </header>
-    <section id="highlights" class="">
-        <nav id="top-nav">
+    <header id="highlights">
+        <nav id="top-nav" class="shadow">
             <ul>
                 <li><a href="#">HIGHLIGHTS</a></li>
                 <li><a href="#">STRATEGIES</a></li>
                 <li><a href="#">GALLERY</a></li>
-                <li><a href="#">IMAGES</a></li>
+                <li><a href="#">VIDEOS</a></li>
                 <li><a href="#">PLAYERS</a></li>
             </ul>
         </nav>
-    </section>
+    </header>
     <section id="main">
-        <section id="previews"></section>
-        <section id="intro"></section>
+        <section id="previews">
+            <div id="trailer-link" class="trailer-n-gallery">
+                <div id="no-trailer" class="empty"></div>
+                <!-- Don't show it right now
+                <video id="trailer" autoplay="" loop="" class="media">
+                    <source type="video/webm" src="static/trailer.webm">
+                    <source type="video/mp4" src="static/trailer.mp4">
+                    Your browser does not support the <code>video</code> element.
+                </video>
+                -->
+                <div id="trailer-bar" class="trailer-n-gallery-bar">OFFICIAL TRAILER</div>
+            </div>
+            <div id="gallery-link" class="trailer-n-gallery">
+                <div id="no-gallery" class="empty"></div>
+                <div id="gallery-bar" class="trailer-n-gallery-bar">GALLERY</div>
+            </div>
+        </section>
+        <section id="map-strategies">
+            <h3 id="map-strategies-title">MAP STRATEGIES</h3>
+            <div id="map-1" class="map-images"></div>
+            <div id="map-2" class="map-images"></div>
+        </section>
+        
+        <section id="intro">
+            <div id="winston-description">
+                <h2 id="needs-winstons">THE WORLD NEEDS WINSTONS</h2>
+            </div>
+            <div id="winston-full-image"></div>
+        </section>
     </section>
     <footer></footer>
 </body>
