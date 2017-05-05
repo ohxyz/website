@@ -100,9 +100,33 @@ section
     margin: 0 auto;
 }
 
+a {
+    color: #d88621;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#ffae4f;
+}
+
+
+h2 {
+    font-size: 32px;
+}
 .shadow
 {
     box-shadow: 2px 2px 2px 1px #aaa;
+}
+
+.section-width
+{
+    
+}
+
+.section-content-box
+{
+    width: 1280px;
+    margin: 0 auto;
 }
 
 #highlights
@@ -148,8 +172,6 @@ section
 {
     margin-top: 30px;
 }
-
-
 
 #previews
 {
@@ -292,13 +314,13 @@ section
 
         #needs-winstons-title {
             text-align: center;
-            font-size: 48px;
+            font-size: 54px;
             font-style: italic;
             text-shadow: 0 4px 5px #aaa;
         }
 
         #this-is-winston {
-            margin-top: 24px;
+            margin-top: 28px;
             text-align: center;
             font-family: Futura;
             font-size: 24px;
@@ -316,3 +338,94 @@ section
         background-size: 100%;
     }
 
+#patch-notes {
+    background-image: url("patch-notes-background.jpg");
+    background-repeat: no-repeat;
+    height: 1450px;
+    padding-top: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden; /* temp solution for patch content overflows when zoom out */
+}
+    #patch-nav-n-content{
+        position: relative;
+        
+    }   
+        #patch-history {
+            margin-top: 16px; /* to algin with patch content */
+            padding: 24px 24px;
+            width: 200px;
+            border-radius: 4px;
+            background:rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+            #patch-history h2{
+                border-bottom: 4px #aaa solid;
+            }
+            
+            #patch-history a {
+                display: block;
+            }
+            
+            #patch-history .date {
+                padding-top: 10px;
+            }
+            
+            #patch-history li {
+                font-family: arial, sans-serif;
+                border-bottom: 1px #666 solid;
+                padding: 20px 0;
+            }
+        
+        #patch-article {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 940px;
+            
+        }
+            #patch-notes-heading {
+                font-size: 48px;
+                font-style: italic;
+                padding: 16px 0;
+                color: white;
+            }
+            
+            #patch-content {
+                font-size: 16px;
+                font-family: arial, sans-serif;
+
+            }
+            
+            #patch-content h2 {
+                color: white;
+                font-size: 32px;
+                padding: 16px 0;
+                font-family: "Bebas Neue", arial, sans-serif;
+            }
+            
+            #patch-content p {
+                padding: 14px 0;
+                line-height: 24px;
+            }
+            
+            
+            #patch-content strong {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            
+            #patch-content em {
+                font-style: italic;
+            }
+            
+            #patch-content ul {
+                list-style: square;
+            }
+        
+            #patch-content li {
+                line-height: 24px;
+
+            }
+        
