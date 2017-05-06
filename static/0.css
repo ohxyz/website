@@ -126,7 +126,7 @@ h2 {
     
 }
 
-.section-content-box
+.section-box
 {
     width: 1280px;
     margin: 0 auto;
@@ -137,6 +137,7 @@ h2 {
     height:710px;
     background-image: url("./winston-highlights.jpg");
     background-repeat: no-repeat;
+    box-shadow: 0 8px 6px -6px #333;
 }
 
 #top-nav
@@ -146,7 +147,6 @@ h2 {
     top: 30px;
     border: 1px #fff solid;
     background-color: #333;
-    width: 1280px;
     border-radius: 2px;
     overflow: hidden;
 }
@@ -315,7 +315,7 @@ h2 {
         height: 563px;
         border: 0px #000 solid;
         width: 450px;
-        background-image: url("./winston-full-body-450.png");
+        background-image: url("./winston-full-body.png");
         background-repeat: no-repeat;
         background-size: 100%;
     }
@@ -459,10 +459,6 @@ h2 {
     #featured-stats {
         
     }   
-
-        
-
-        
         #featured-stats ul{
             overflow: hidden;
             width: 102%;
@@ -541,7 +537,110 @@ h2 {
                     opacity: 0.6
                 }
         
-    
-    
+    #top-heros {
+        
+    }   
+        #top-heros-content {
+            padding-top: 32px;
+            
+        }
+            #top-heros-content ul {
+                
+            }
+                #top-heros-content li {
+                    position: relative;
+                    height: 72px;
+                }
+
+                .hero-icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 64px;
+                    height: 64px;
+                    border: 1px #666 solid;
+                    border-radius: 4px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    
+                }
+                
+                #winston .hero-icon {
+                    background-image: url("./winston-icon.png");
+                }
+                
+                #lucio .hero-icon {
+                    background-image: url("./lucio-icon.png");
+                }
+                
+                #reinhardt .hero-icon {
+                    background-image: url("./reinhardt-icon.png");
+                }
+                
+                #zarya .hero-icon {
+                    background-image: url("./zarya-icon.png");
+                }
+                
+                #soldier-76 .hero-icon {
+                    background-image: url("./soldier-76-icon.png");
+                }
+                
+                .progress-bar {
+                    position: absolute;
+                    top: 0;
+                    left: 68px;
+                    right: 0;
+                    height: 66px;
+                    background-color: #666;
+                    border-radius: 4px;
+                    box-shadow: inset 0 0 5px #333;
+                }
+                    .hero-name {
+                        position: absolute;
+                        top: 16px;
+                        font-size: 38px;
+                        font-style: italic;
+                        left: 20px;
+                        color: white;
+                        z-index: 1;
+                    }
+                
+                    .progress {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        right: 5px;
+                        bottom: 5px;
+                        border-radius: 4px;
+                        border: 1px #bbb solid;
+                        background-color: #aaa;
+                    }
+                    
+                    #lucio .progress {
+                        right: 50%;
+                    }
+                    
+                    #reinhardt .progress {
+                        right: 80%;
+                    }
+                    
+                    #zarya .progress {
+                        right: 40%;
+                    }
+                    
+                    #soldier-76 .progress {
+                        right: 100%;
+                        border: 0;
+                        
+                    }
+                    
+                    .time-played {
+                        position: absolute;
+                        top: 24px;
+                        right: 20px;
+                        font-size: 24px;
+                        color: white;
+                        z-index: 1;
+                    }
     
     
