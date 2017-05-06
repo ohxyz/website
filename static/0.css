@@ -109,6 +109,9 @@ a:hover {
     color:#ffae4f;
 }
 
+h1 {
+    font-size: 52px;
+}
 
 h2 {
     font-size: 32px;
@@ -148,145 +151,124 @@ h2 {
     overflow: hidden;
 }
 
-#top-nav li
-{
-    float: left;
-}
+    #top-nav li {
+        float: left;
+    }
 
-#top-nav a
-{
-    display: block;
-    font-size: 24px;
-    padding: 14px 28px;
-    color: #fff;
-    text-decoration: none;
-}
+    #top-nav a {
+        display: block;
+        font-size: 24px;
+        padding: 14px 28px;
+        color: #fff;
+        text-decoration: none;
+    }
 
-#top-nav a:hover
-{
-    background-color: #fff;
-    color: #333;
-}
+    #top-nav a:hover{
+        background-color: #fff;
+        color: #333;
+    }
 
 #main 
 {
     margin-top: 30px;
 }
 
-#previews
-{
+#previews {
     position: relative;
-    height: 160px;
-    width: 1280px;
-    
+    height: 140px;
 }
 
-.trailer-n-gallery
-{
-    width: 600px;
-    height: 200px;
-    position: absolute;
-}
+    .trailer-n-gallery {
+        width: 600px;
+        height: 200px;
+        position: absolute;
+    }
 
-#trailer-link
-{
-    left: 0;
-}
+    #trailer-link {
+        left: 0;
+    }
 
-#gallery-link
-{
-    right: 0;
-}
+    #gallery-link {
+        right: 0;
+    }
 
-#trailer
-{
-    width: 180px;
-    border-radius: 2px;
-    position: absolute;
-    left: 15px;
-}
+    #trailer {
+        width: 180px;
+        border-radius: 2px;
+        position: absolute;
+        left: 15px;
+    }
 
-.empty
-{
-    width: 180px;
-    height: 100px;
-    border: 1px #ccc dashed;
-    background-color: white;
-    border-radius: 2px;
-    position: absolute;
-}
+    .empty {
+        width: 180px;
+        height: 100px;
+        border: 1px #ccc dashed;
+        background-color: white;
+        border-radius: 2px;
+        position: absolute;
+    }
 
-#no-trailer
-{
-    left: 15px;
-}
+    #no-trailer {
+        left: 15px;
+    }
 
-#no-gallery
-{
-    right: 15px;
-}
+    #no-gallery {
+        right: 15px;
+    }
 
-.trailer-n-gallery-bar
-{
-    position: absolute;
-    top: 25px;
-    z-index: -1;
-    color: white;
-    background-color: #333;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 36px;
+    .trailer-n-gallery-bar {
+        position: absolute;
+        top: 25px;
+        z-index: -1;
+        color: white;
+        background-color: #333;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 36px;
 
-    border-radius: 2px;
-}
+        border-radius: 2px;
+    }
 
-#trailer-bar
-{
-    padding-right: 20px;
-    width: 410px;
-    text-align: right;
-}
+    #trailer-bar {
+        padding-right: 20px;
+        width: 410px;
+        text-align: right;
+    }
 
-#gallery-bar
-{
-    right: 0;
-    padding-left: 20px;
-    width: 310px;
-}
+    #gallery-bar {
+        right: 0;
+        padding-left: 20px;
+        width: 380px;
+    }
 
-#map-strategies
-{
+#map-strategies {
     position: relative;
     width: 1280px;
     height: 460px;
 }
 
-.map-images
-{
-    width: 600px;
-    height: 294px;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 80px;
-}
+    .map-images {
+        width: 600px;
+        height: 294px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 80px;
+    }
 
-#map-strategies-title
-{
-    font-size: 40px;
-    text-align: center;
-}
+    #map-strategies-title {
+        font-size: 40px;
+        text-align: center;
+    }
 
-#map-1
-{
-    background-image: url("./hanamura-layout.jpg");
-    left: 0;
-}
+    #map-1 {
+        background-image: url("./hanamura-layout.jpg");
+        left: 0;
+    }
 
-#map-2
-{
-    background-image: url("./route-66-layout.jpg");
-    right: 0;
-}
+    #map-2 {
+        background-image: url("./route-66-layout.jpg");
+        right: 0;
+    }
 
 #transparent-section
 {
@@ -314,7 +296,7 @@ h2 {
 
         #needs-winstons-title {
             text-align: center;
-            font-size: 54px;
+            font-size: 60px;
             font-style: italic;
             text-shadow: 0 4px 5px #aaa;
         }
@@ -323,7 +305,7 @@ h2 {
             margin-top: 28px;
             text-align: center;
             font-family: Futura;
-            font-size: 24px;
+            font-size: 28px;
         }
 
     #winston-full-body {
@@ -428,4 +410,138 @@ h2 {
                 line-height: 24px;
 
             }
+            
+#stats {
+    
+}
+    .stats-section-box {
+        padding-top: 36px;
+    }
+    
+    #profile {
+        overflow: hidden;
         
+    }
+        #player-avatar {
+            float: left;
+
+        }
+        
+            #player-avatar img{
+                width: 96px;
+                height: 96px;
+            }
+            
+        
+        #player-details {
+            float: left;
+            padding-left: 20px;
+
+        }
+        
+            #player-name {
+                font-size: 64px;
+                font-style: italic;
+            }
+            
+            #games-won {
+                font-size: 24px;
+                padding-left: 4px;
+                color: #ffae4f;
+            }
+
+    #stats h1 {
+        padding: 12px 0;
+        border-bottom: 6px #777 solid;
+    }
+        
+    
+    #featured-stats {
+        
+    }   
+
+        
+
+        
+        #featured-stats ul{
+            overflow: hidden;
+            width: 102%;
+            
+        }
+            #featured-stats li{
+                float: left;
+                width: 23%;
+                height: 160px;
+                background-color: #333;
+                margin-right: 2%;
+                margin-top: 26px;
+                border-radius: 2px;
+                position: relative; /* for .featured-stats-icon */
+            }
+            
+                .featured-stats-icon {
+                    position: absolute;
+                    width: 160px;
+                    height: 160px;
+                    top: -30px;
+                    right: -30px;
+                    
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    opacity: 0.2;
+                }
+                
+                #eliminations-average{
+                    background-image: url("./eliminations-average.png");
+                }
+                
+                #damage-done-average {
+                    background-image: url("./damage-done-average.png");
+                }
+                
+                #deaths-average {
+                    background-image: url("./deaths-average.png");
+                }
+                
+                #final-blows-average {
+                    background-image: url("./final-blows-average.png");
+                }
+                
+                #healing-done-average {
+                    background-image: url("./healing-done-average.png");
+                }
+                
+                #objective-kills-average {
+                    background-image: url("./objective-kills-average.png");
+                }
+                
+                #objective-time-average {
+                    background-image: url("./objective-time-average.png");
+                }
+                
+                #solo-kills-average {
+                    background-image: url("./solo-kills-average.png");
+                }
+                
+                .featured-stats-number {
+                    padding-top: 56px;
+                    padding-left: 20px;
+                    color: white;
+                    font-size: 64px;
+                    font-style: italic;
+                    opacity: 0.9;
+                }
+                
+                .featured-stats-text {
+                    color: white;
+                    font-size: 22px;
+                    padding-left: 24px;
+                    padding-top: 0;
+                    height: 100px;
+                    opacity: 0.6
+                }
+        
+    
+    
+    
+    
