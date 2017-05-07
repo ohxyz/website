@@ -85,15 +85,10 @@ body
     color: #333;
 }
 
-header
-{
+header {
+
 }
 
-footer
-{
-    height: 4000px;
-    background-color: #333;
-}
 
 section
 {
@@ -116,77 +111,71 @@ h1 {
 h2 {
     font-size: 32px;
 }
-.shadow
-{
-    box-shadow: 2px 2px 2px 1px #aaa;
+.shadow {
+    box-shadow: 2px 2px 2px 1px rgba(40, 40, 40, 0.3);
 }
 
-.section-width
-{
+.section-width {
     
 }
 
-.section-box
-{
+.section-box {
     width: 1280px;
     margin: 0 auto;
 }
 
-#highlights
-{
+#highlights {
     height:710px;
     background-image: url("./winston-highlights.jpg");
     background-repeat: no-repeat;
     box-shadow: 0 8px 6px -6px #222;
 }
 
-#top-nav
-{
-    position: relative;
-    top: 30px;
-    background-color: #191919;
-    border-radius: 2px;
-    overflow: hidden;
-    z-index: 100; /* make sure it is over every element */
-}
-    #top-nav li {
-        float: left;
+    #top-nav {
+        position: relative;
+        top: 30px;
+        background-color: #191919;
+        border-radius: 2px;
+        overflow: hidden;
+        z-index: 100; /* make sure it is over every element */
     }
-        #top-nav #logo {
-            background-image: url("./logo.jpg");
-            background-repeat: no-repeat;
-            padding: 0;
-            margin-left: 5px;
-            margin-right: 5px;
-            background-size: 55%;
-            background-position: 50% 45%;
-            width: 52px;
-            display: block;
-            height: 52px;
+        #top-nav li {
+            float: left;
         }
-        
-        #top-nav #logo:hover {
-            background-color: #191919;
-        }
-        
-        #top-nav a {
-            display: block;
-            font-size: 24px;
-            padding-top: 14px;
-            padding-bottom: 14px;
-            padding-left: 28px;
-            padding-right: 28px;
-            color: #fff;
-            text-decoration: none;
-        }
+            #top-nav #logo {
+                background-image: url("./logo.jpg");
+                background-repeat: no-repeat;
+                padding: 0;
+                margin-left: 5px;
+                margin-right: 5px;
+                background-size: 55%;
+                background-position: 50% 45%;
+                width: 52px;
+                display: block;
+                height: 52px;
+            }
+            
+            #top-nav #logo:hover {
+                background-color: #191919;
+            }
+            
+            #top-nav a {
+                display: block;
+                font-size: 24px;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                padding-left: 28px;
+                padding-right: 28px;
+                color: #fff;
+                text-decoration: none;
+            }
 
-        #top-nav a:hover{
-            background-color: #fff;
-            color: #333;
-        }
+            #top-nav a:hover{
+                background-color: #fff;
+                color: #333;
+            }
 
-#main 
-{
+#main  {
     margin-top: 30px;
 }
 
@@ -723,7 +712,76 @@ h2 {
                         padding: 5px 0;
                     }
             
+footer {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-image: url("./footer-background.jpg");
+
+}
+
+    #footer-content {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        font-family: Futura;
+        color: white;
+        text-align: center;
+    }
+    
+        .like {
+            font-size: 24px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            color: #eee;
+        }
         
+        .then {
+            font-size: 18px;
+            padding: 0;
+            color: #999;
+        }
         
+        #email {
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 6px;
+            color: #ffae4f;
+        }
         
+        #address {
+            font-size: 12px;
+            color: #999;
+        }
         
+        #winston-abilities {
+            margin-top: 22px;
+            margin-bottom: 0;
+
+        }
+            .ability {
+                width: 48px;
+                height: 48px;
+                margin: 0 8px;
+                border: 2px white solid;
+                border-radius: 26px;
+                background-position: 50% 50%;
+                background-size: 75%;
+                background-repeat: no-repeat;
+                display: inline-block;
+                opacity: 0.8;
+            }
+            
+            #winston-abilities #tesla-canon {
+                background-image: url("./tesla-canon-icon.png");
+            }
+            
+            #jump-pack {
+                background-image: url("./jump-pack-icon.png");
+            }
+            
+            #barrier-projector {
+                background-image: url("./barrier-projector-icon.png");
+            }
+            
+            #primal-rage {
+                background-image: url("./primal-rage-icon.png");
+            }
