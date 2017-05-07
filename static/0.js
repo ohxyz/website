@@ -72,7 +72,74 @@ var DATA = {
 };
 
 $( document ).ready( function () {
+    
+    
+    /* START: scroll and fix functionality for #top-nav */
+    var $topNav = $( '#top-nav' );
+    var top = parseInt( $topNav.css( 'top' ) );
 
+    function setPosition( $element, originalTop ) {
+        
+        var marginLeft = parseInt( $element.css( 'marginLeft' ) );
+        var scrollTop = $( window ).scrollTop();
+
+        var cssScrolled = {
+            position: 'fixed',
+            marginLeft: marginLeft,
+            top: 0
+        };
+        
+        var cssOriginal = {
+            position: 'relative',
+            margin: '0 auto',
+            top: originalTop
+        };
+
+        if ( scrollTop > originalTop ) {
+            $topNav.css( cssScrolled );
+        }
+        else {
+            $topNav.css( cssOriginal );
+        }
+
+    }
+    
+    /* BUG FIX: when page refresh, the scroll bar was still at former place, so set the #top-nav again */
+    setPosition( $topNav, top );
+    
+    $( window ).resize( function () {
+        /* BUG FIX: marginLeft can change when window resizes */            
+        var position = $topNav.css( 'position' );
+        var marginLeft;
+        var cssOriginal = {
+            position: 'relative',
+            margin: '0 auto',
+            top: top
+        };
+        
+        var cssScrolled;
+        
+        if ( position === 'fixed' ) {
+            //  Set back to relative postion and calculate margin-left value
+            $topNav.css( cssOriginal );
+            marginLeft = $topNav.css( 'marginLeft' );
+            
+            cssScrolled = {
+                position: 'fixed',
+                marginLeft: marginLeft,
+                top: 0
+            };
+            
+            $topNav.css( cssScrolled );
+        }
+        
+    } );
+    
+    $( window ).scroll( function () {
+        setPosition( $topNav, top );
+    } );
+    /* END: scroll and fix functionality for #top-nav */
+    
 
     /* START: Create stats box starts */
     ( function ( $ ) {
@@ -148,42 +215,6 @@ $( document ).ready( function () {
             $careerStatsColumn.append( $careerStatsBox );
         }
     } ) ( jQuery );  /* END: Create and append stats box finishes */
-    
-    
-    /* START: scroll and fix functionality for #top-nav */
-    ( function ( $, window ) {
-        var $topNav = $( '#top-nav' );
-        var topNavTop = parseInt( $topNav.css( 'top' ) );
-        var marginLeft = parseInt( $topNav.css( 'marginLeft' ) );
-        
-        $( window ).scroll( function () {
-            
-            var scrollTop = $( window ).scrollTop();
 
-            var cssAfterScroll = {
-                position: 'fixed',
-                marginLeft: marginLeft,
-                top: 0
-            };
-            
-            var cssBeforeScroll = {
-                position: 'relative',
-                margin: '0 auto',
-                top: topNavTop
-            };
-            
-            console.log( scrollTop, topNavTop );
-            if ( scrollTop > topNavTop ) {
-                
-                $topNav.css( cssAfterScroll );
-            }
-            else {
-                $topNav.css( cssBeforeScroll );
-            }
-            
-        } );
-    } )( jQuery, window ); /* END: scroll and fix functionality for #top-nav */
-    
-    
 } );
 
