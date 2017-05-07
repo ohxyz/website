@@ -73,77 +73,117 @@ var DATA = {
 
 $( document ).ready( function () {
 
-    /* Generate a career stats box ***     
-        <div class="career-stats-box">
-            <div class="career-stats-box-title">COMBAT</div>
-            <div class="career-stats-box-content">
-                <dl>
-                    <dt>MELEE FINAL BLOWS</dt><dd>467</dd>
-                    <dt>SOLO KILLS</dt><dd>231</dd>
-                </dl>
+
+    /* START: Create stats box starts */
+    ( function ( $ ) {
+        /* Generate a career stats box ***     
+            <div class="career-stats-box">
+                <div class="career-stats-box-title">COMBAT</div>
+                <div class="career-stats-box-content">
+                    <dl>
+                        <dt>MELEE FINAL BLOWS</dt><dd>467</dd>
+                        <dt>SOLO KILLS</dt><dd>231</dd>
+                    </dl>
+                </div>
             </div>
-        </div>
-    */
-    function $createCareerStatsBox( o ) {
+        */
+        function $createCareerStatsBox( o ) {
         
-        var $careerStatsBox = $( '<div class="career-stats-box">' );
-        var $careerStatsBoxTitle = $( '<div class="career-stats-box-title">' );
-        var $careerStatsBoxContent = $( '<div class="career-stats-box-content">' );
-        
-        var $dl = $( '<dl>' );
-        var $dt;
-        var $dd;
-        var statsBoxContent = o.content;
-        
-        $careerStatsBox.append( $careerStatsBoxTitle, $careerStatsBoxContent );
-        $careerStatsBoxContent.append( $dl );
-        $careerStatsBoxTitle.text( o.title );
-        
-        for ( var key in statsBoxContent ){
-            $dt = $( '<dt>' );
-            $dd = $( '<dd>' );
-            $dt.text( key );
-            $dd.text( statsBoxContent[ key ] );
-            $dl.append( $dt, $dd );
-        }
-        
-        return $careerStatsBox;
-    }
-    
-    
-    var $careerStatsColumn;
-    var $leftColumn = $( '#career-stats-content #left-column' );
-    var $middleColumn = $( '#career-stats-content #middle-column' );
-    var $rightColumn = $( '#career-stats-content #right-column' );
-    
-    var careerStats = DATA['career stats'];
-    var numberOfStats = careerStats.length;
-    var numberInEachColumn = Math.ceil( numberOfStats / 3 );
-    var startIndex = 0;
-    var $careerStatsBox;
-    
-    numberInEachColumn = ( numberInEachColumn < numberOfStats ? numberInEachColumn : numberOfStats );
-    
-    for ( ; startIndex < numberOfStats ; startIndex ++ )
-    {
-        $careerStatsBox = $createCareerStatsBox( careerStats[ startIndex ] );
-        
-        if ( startIndex < numberInEachColumn ) {
+            var $careerStatsBox = $( '<div class="career-stats-box">' );
+            var $careerStatsBoxTitle = $( '<div class="career-stats-box-title">' );
+            var $careerStatsBoxContent = $( '<div class="career-stats-box-content">' );
             
-            $careerStatsColumn = $leftColumn;
-        }
-        else if (  ( startIndex >= numberInEachColumn ) 
-                && ( startIndex < numberInEachColumn * 2 ) ) {
+            var $dl = $( '<dl>' );
+            var $dt;
+            var $dd;
+            var statsBoxContent = o.content;
             
-            $careerStatsColumn = $middleColumn;
-        }
-        else {
+            $careerStatsBox.append( $careerStatsBoxTitle, $careerStatsBoxContent );
+            $careerStatsBoxContent.append( $dl );
+            $careerStatsBoxTitle.text( o.title );
             
-            $careerStatsColumn = $rightColumn
+            for ( var key in statsBoxContent ){
+                $dt = $( '<dt>' );
+                $dd = $( '<dd>' );
+                $dt.text( key );
+                $dd.text( statsBoxContent[ key ] );
+                $dl.append( $dt, $dd );
+            }
+            
+            return $careerStatsBox;
         }
+    
+    
+        var $careerStatsColumn;
+        var $leftColumn = $( '#career-stats-content #left-column' );
+        var $middleColumn = $( '#career-stats-content #middle-column' );
+        var $rightColumn = $( '#career-stats-content #right-column' );
+        
+        var careerStats = DATA['career stats'];
+        var numberOfStats = careerStats.length;
+        var numberInEachColumn = Math.ceil( numberOfStats / 3 );
+        var startIndex = 0;
+        var $careerStatsBox;
+        
+        numberInEachColumn = ( numberInEachColumn < numberOfStats ? numberInEachColumn : numberOfStats );
+        
+        for ( ; startIndex < numberOfStats ; startIndex ++ )
+        {
+            $careerStatsBox = $createCareerStatsBox( careerStats[ startIndex ] );
+            
+            if ( startIndex < numberInEachColumn ) {
+                
+                $careerStatsColumn = $leftColumn;
+            }
+            else if (  ( startIndex >= numberInEachColumn ) 
+                    && ( startIndex < numberInEachColumn * 2 ) ) {
+                
+                $careerStatsColumn = $middleColumn;
+            }
+            else {
+                
+                $careerStatsColumn = $rightColumn
+            }
 
-        $careerStatsColumn.append( $careerStatsBox );
-    }
+            $careerStatsColumn.append( $careerStatsBox );
+        }
+    } ) ( jQuery );  /* END: Create and append stats box finishes */
+    
+    
+    /* START: scroll and fix functionality for #top-nav */
+    ( function ( $, window ) {
+        var $topNav = $( '#top-nav' );
+        var topNavTop = parseInt( $topNav.css( 'top' ) );
+        var marginLeft = parseInt( $topNav.css( 'marginLeft' ) );
+        
+        $( window ).scroll( function () {
+            
+            var scrollTop = $( window ).scrollTop();
 
+            var cssAfterScroll = {
+                position: 'fixed',
+                marginLeft: marginLeft,
+                top: 0
+            };
+            
+            var cssBeforeScroll = {
+                position: 'relative',
+                margin: '0 auto',
+                top: topNavTop
+            };
+            
+            console.log( scrollTop, topNavTop );
+            if ( scrollTop > topNavTop ) {
+                
+                $topNav.css( cssAfterScroll );
+            }
+            else {
+                $topNav.css( cssBeforeScroll );
+            }
+            
+        } );
+    } )( jQuery, window ); /* END: scroll and fix functionality for #top-nav */
+    
+    
 } );
 
