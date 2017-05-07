@@ -134,7 +134,7 @@ h2 {
     #top-nav {
         position: relative;
         top: 30px;
-        background-color: #191919;
+        background-color: #333;
         border-radius: 2px;
         overflow: hidden;
         z-index: 100; /* make sure it is over every element */
@@ -143,20 +143,22 @@ h2 {
             float: left;
         }
             #top-nav #logo {
-                background-image: url("./logo.jpg");
+                background-image: url("./logo.png");
                 background-repeat: no-repeat;
                 padding: 0;
-                margin-left: 5px;
-                margin-right: 5px;
-                background-size: 55%;
+                margin-left: 7px;
+                margin-right: 7px;
+                background-size: 50%;
                 background-position: 50% 45%;
                 width: 52px;
                 display: block;
                 height: 52px;
+                opacity: 0.9;
             }
             
             #top-nav #logo:hover {
-                background-color: #191919;
+                background-color: #333;
+                opacity: 1;
             }
             
             #top-nav a {
@@ -716,6 +718,7 @@ footer {
     background-color: #333;
     background-position: 50% 50%;
     background-image: url("./footer-background.jpg");
+
 
 }
 
