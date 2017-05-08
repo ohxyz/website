@@ -73,6 +73,11 @@ var DATA = {
 
 $( document ).ready( function () {
     
+    /* START: development warning */
+    if ( window.location.href.indexOf( "ohxyz.com" ) == -1 ) {
+        $( 'body' ).prepend( '<h2 style="color:red;position:fixed">LOCAL</h2>' );
+    }
+    /* END: development warning */
     
     /* START: scroll and fix functionality for #top-nav */
     var $topNav = $( '#top-nav' );
@@ -140,7 +145,17 @@ $( document ).ready( function () {
     } );
     /* END: scroll and fix functionality for #top-nav */
     
+    /* START: Add animation to progress bars */
+    
+    var $topHeros = $( '#top-heros' );
+    
+    $( window ).scroll( function () {
 
+    } );
+    
+    /* END: Add animation to progress bars */
+    
+    
     /* START: Create stats box starts */
     ( function ( $ ) {
         /* Generate a career stats box ***     
@@ -218,3 +233,5 @@ $( document ).ready( function () {
 
 } );
 
+/* Only on Linode */
+console.log( "Linode" );

@@ -74,7 +74,7 @@ body
 @font-face
 {
     font-family: Futura;
-    src: url("./Futura.ttf");
+    src: url("./Futura.ttf"), url("./Futura.woff");
 }
 
 body
@@ -626,14 +626,25 @@ h2 {
                         box-shadow: 2px 2px 4px #222;
                     }
                     
+                    .progressing-start {
+                        animation-duration: 1s;
+                        animation-name: progressing;
+                    }
+                    
+                    @keyframes progressing {
+                        from {
+                            right: 100%;
+                        }
+                    }
+                    
                     #lucio .progress {
                         right: 50%;
                     }
-                    
+
                     #reinhardt .progress {
                         right: 80%;
                     }
-                    
+
                     #zarya .progress {
                         right: 60%;
                     }
@@ -659,7 +670,6 @@ h2 {
             padding-top: 32px;
             position: relative;
             height: 730px;
-            
         }
             .career-stats-column {
                 position: absolute;
@@ -722,7 +732,6 @@ footer {
     background-color: #333;
     background-position: 50% 50%;
     background-image: url("./footer-background.jpg");
-
 
 }
 
