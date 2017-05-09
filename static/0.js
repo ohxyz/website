@@ -84,27 +84,19 @@ $( document ).ready( function () {
     var top = parseInt( $topNav.css( 'top' ) );
     
     var cssOriginal = {
-            position: 'relative',
-            margin: '0 auto',
-            top: top
-        };
+        position: 'relative',
+    };
         
     var cssScrolled = {
-            position: 'fixed',
-            marginLeft: 0,
-            top: 0,
-            left: 0,
-            right: 0
-        };
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+    };
 
     function setPosition( $element, originalTop ) {
-        // FIX BUG: When page refreshes, #top-nav's margin-left becomes 0. 
-        $element.css( 'margin', '0 auto' );
         
-        var marginLeft = parseInt( $element.css( 'marginLeft' ) );
         var scrollTop = $( window ).scrollTop();
-
-        cssScrolled[ 'marginLeft' ] = marginLeft;
         cssOriginal[ 'top' ] = originalTop;
 
         if ( scrollTop > originalTop ) {
@@ -114,43 +106,17 @@ $( document ).ready( function () {
             $topNav.css( cssOriginal );
         }
     }
-    
-    $( window ).resize( function () {
-        /* BUG FIX: marginLeft can change when window resizes */            
-        var position = $topNav.css( 'position' );
-        var marginLeft;
-        
-        cssOriginal[ 'top' ] = top;
 
-        if ( position === 'fixed' ) {
-            //  Set back to relative postion and calculate margin-left value
-            $topNav.css( cssOriginal );
-            marginLeft = $topNav.css( 'marginLeft' );
-            
-            cssScrolled[ 'marginLeft' ] = marginLeft;
-            
-            $topNav.css( cssScrolled );
-        }
-        
-    } );
-    
     $( window ).scroll( function () {
-        /* NOTE: If page was scrolled, then when page gets reloaded, the scroll event gets called again. */
+        
+        // console.log('scrolled');
         setPosition( $topNav, top );
     } );
+    
+    // Always call this function when page gets reloaded.
+    setPosition( $topNav, top );
     /* END: scroll and fix functionality for #top-nav */
-    
-    /* START: Add animation to progress bars */
-    
-    var $topHeros = $( '#top-heros' );
-    
-    $( window ).scroll( function () {
 
-    } );
-    
-    /* END: Add animation to progress bars */
-    
-    
     /* START: Create stats box starts */
     ( function ( $ ) {
         /* Generate a career stats box ***     
