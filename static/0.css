@@ -128,6 +128,7 @@ h2 {
     /* COMPATIBLE : Use 740 to make 768px no scroll bar */
     min-width: 740px;
     max-width: 1180px;
+    margin: 0 auto;
 
 }
 
@@ -358,7 +359,6 @@ h2 {
 }
     #patch-nav-n-content{
         display: flex;
-        margin: 0 auto;
     }   
         #patch-history {
             padding: 24px 24px;
