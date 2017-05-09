@@ -352,6 +352,7 @@ h2 {
 #patch-notes {
     background-image: url("patch-notes-background.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 48px;
     padding-bottom: 32px;
     color: rgba(255, 255, 255, 0.8);
@@ -386,7 +387,9 @@ h2 {
             }
         
         #patch-article {          
-            margin-left: 40px;
+            padding-left: 40px;
+            padding-right: 20px;
+            
         }
             #patch-notes-heading {
                 font-size: 48px;
@@ -398,7 +401,6 @@ h2 {
             #patch-content {
                 font-size: 16px;
                 font-family: arial, sans-serif;
-
             }
             
             #patch-content h2 {
