@@ -91,7 +91,9 @@ $( document ).ready( function () {
         var cssScrolled = {
             position: 'fixed',
             marginLeft: marginLeft,
-            top: 0
+            top: 0,
+            left: 0,
+            right: 0
         };
         
         var cssOriginal = {
