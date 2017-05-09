@@ -82,25 +82,30 @@ $( document ).ready( function () {
     /* START: scroll and fix functionality for #top-nav */
     var $topNav = $( '#top-nav' );
     var top = parseInt( $topNav.css( 'top' ) );
-
-    function setPosition( $element, originalTop ) {
+    
+    var cssOriginal = {
+            position: 'relative',
+            margin: '0 auto',
+            top: top
+        };
         
-        var marginLeft = parseInt( $element.css( 'marginLeft' ) );
-        var scrollTop = $( window ).scrollTop();
-
-        var cssScrolled = {
+    var cssScrolled = {
             position: 'fixed',
-            marginLeft: marginLeft,
+            marginLeft: 0,
             top: 0,
             left: 0,
             right: 0
         };
+
+    function setPosition( $element, originalTop ) {
+        // FIX BUG: When page refreshes, #top-nav's margin-left becomes 0. 
+        $element.css( 'margin', '0 auto' );
         
-        var cssOriginal = {
-            position: 'relative',
-            margin: '0 auto',
-            top: originalTop
-        };
+        var marginLeft = parseInt( $element.css( 'marginLeft' ) );
+        var scrollTop = $( window ).scrollTop();
+
+        cssScrolled[ 'marginLeft' ] = marginLeft;
+        cssOriginal[ 'top' ] = originalTop;
 
         if ( scrollTop > originalTop ) {
             $topNav.css( cssScrolled );
@@ -108,34 +113,21 @@ $( document ).ready( function () {
         else {
             $topNav.css( cssOriginal );
         }
-
     }
-    
-    /* BUG FIX: when page refresh, the scroll bar was still at former place, so set the #top-nav again */
-    setPosition( $topNav, top );
     
     $( window ).resize( function () {
         /* BUG FIX: marginLeft can change when window resizes */            
         var position = $topNav.css( 'position' );
         var marginLeft;
-        var cssOriginal = {
-            position: 'relative',
-            margin: '0 auto',
-            top: top
-        };
         
-        var cssScrolled;
-        
+        cssOriginal[ 'top' ] = top;
+
         if ( position === 'fixed' ) {
             //  Set back to relative postion and calculate margin-left value
             $topNav.css( cssOriginal );
             marginLeft = $topNav.css( 'marginLeft' );
             
-            cssScrolled = {
-                position: 'fixed',
-                marginLeft: marginLeft,
-                top: 0
-            };
+            cssScrolled[ 'marginLeft' ] = marginLeft;
             
             $topNav.css( cssScrolled );
         }
@@ -143,6 +135,7 @@ $( document ).ready( function () {
     } );
     
     $( window ).scroll( function () {
+        /* NOTE: If page was scrolled, then when page gets reloaded, the scroll event gets called again. */
         setPosition( $topNav, top );
     } );
     /* END: scroll and fix functionality for #top-nav */
