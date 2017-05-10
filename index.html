@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Overwatch Winston - ohxyz.com</title>
-    <meta name="description" content="A Winston player of Overwatch">
-    <meta name="author" content="ohxyz.com">
-    <link rel="icon" href="static/website-icon.png">
-    <link rel="stylesheet" href="static/0.css">
-    <link rel="stylesheet" href="static/mobile-probe.css">
+    <meta name="description" content="A Winston player of Overwatch" />
+    <meta name="author" content="ohxyz.com" />
+    <link rel="icon" href="static/website-icon.png" />
+    <link rel="stylesheet" href="static/0.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="static/768.css" />
     <script src="static/jquery.min.js"></script>
     <script src="static/0.js"></script>
     <!-- Google Analytics code -->
@@ -40,24 +41,25 @@
         <div id="mobile-logo" ><a href="http://ohxyz.com"></a></div>
         <nav id="mobile-menu" class="shadow">
             <ul>       
+                <li><a href="/">HOME</a></li>
                 <li><a href="#previews">PREVIEWS</a></li>
                 <li><a href="#map-strategies">STRATEGIES</a></li>
                 <li><a href="#motto">MOTTO</a></li>
                 <li><a href="#patch-notes">PATCH NOTES</a></li>
                 <li><a href="#stats">STATS</a></li>
-                <li id="overwatch-logo"><a href="#"></a><li>
             </ul>
+            <div id="overwatch-logo"></div>
         </nav>
     </header>
     <section id="main">
         <section id="previews" class="section-box">
-            <div id="trailer-box" class="trailer-n-gallery-box">
-                <div id="no-trailer" class="empty"></div>
-                <div id="trailer-bar" class="trailer-n-gallery-bar">OFFICIAL TRAILER</div>
+            <div id="preview-1-box" class="preview-box">
+                <div id="preview-1" class="preview-content"></div>
+                <div id="preview-1-bar" class="preview-bar">OFFICIAL TRAILER</div>
             </div>
-            <div id="gallery-box" class="trailer-n-gallery-box">
-                <div id="no-gallery" class="empty"></div>
-                <div id="gallery-bar" class="trailer-n-gallery-bar">PRO GAME PLAY</div>
+            <div id="preview-2-box" class="preview-box">
+                <div id="preview-2" class="preview-content"></div>
+                <div id="preview-2-bar" class="preview-bar">PRO GAME PLAY</div>
             </div>
         </section>
         <section id="map-strategies" class="section-box">
@@ -81,23 +83,7 @@
         </section>
         <section id="patch-notes">
             <div id="patch-nav-n-content" class="section-box">
-                <nav id="patch-history">
-                    <h2>RECENT PATCH NOTES</h2>
-                    <ul>
-                        <li>
-                            <a href="#patch-article">Patch 1.10.1.2</a>
-                            <div class="date">27/04/2017</a>
-                        </li>
-                        <li>
-                            <a href="#patch-article">Patch 1.10.0.2</a>
-                            <div class="date">17/04/2017</a>
-                        </li>
-                        <li>
-                            <a href="#patch-article">Patch 1.10.0.2</a>
-                            <div class="date">11/04/2017</a>
-                        </li>
-                    </ul>
-                </nav>
+
                 <article id="patch-article">
                     <h1 id="patch-notes-heading">OFFICIAL OVERWATCH PATCH NOTES - APRIL 27, 2017</h1>
                     <div id="patch-content">
@@ -146,6 +132,23 @@
                         </ul>
                     </div>
                 </article>
+                <nav id="patch-history">
+                    <h2>RECENT PATCH NOTES</h2>
+                    <ul>
+                        <li>
+                            <a href="#patch-article">Patch 1.10.1.2</a>
+                            <div class="date">27/04/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article">Patch 1.10.0.2</a>
+                            <div class="date">17/04/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article">Patch 1.10.0.2</a>
+                            <div class="date">11/04/2017</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </section>
         <section id="stats" class="section-box" >
