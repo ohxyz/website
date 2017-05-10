@@ -77,6 +77,19 @@ $( document ).ready( function () {
     if ( window.location.href.indexOf( "ohxyz.com" ) == -1 ) {
         $( 'body' ).prepend( '<h2 style="color:red;position:fixed">LOCAL</h2>' );
     }
+    
+    ( function () {
+        var $mobileLogo = $( '#mobile-logo' );
+        var $mobileMenu = $(' #mobile-menu' );
+        
+        $( '#mobile-logo a' ).click( function ( event ) {
+            event.preventDefault();
+            $mobileLogo.toggleClass( 'mobile-logo-active' );
+            $mobileMenu.toggle();
+        });
+        
+    } )();
+    
     /* END: development warning */
     
     /* START: scroll and fix functionality for #top-nav */
