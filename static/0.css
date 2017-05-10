@@ -895,3 +895,163 @@ footer {
             #primal-rage {
                 background-image: url("./primal-rage-icon.png");
             }
+
+            
+/* START: Media query 768 */
+
+@media only screen and (max-width: 768px) {
+    
+    #top-nav {
+        display: none;
+    }
+
+    #mobile-logo {
+        display: block;
+    }
+
+    body {
+        min-width: 0;
+    }
+        
+    .section-box {
+        min-width: 0;
+        max-width: 740px;
+    }
+
+    #highlights {
+        height: 300px;
+    }
+        /* Set to none temporarily */
+        #mobile-menu li:nth-child(2){
+            display: none;
+        }
+        
+        #previews {
+            overflow: auto;
+            /* Set to none temporarily */
+            display: none;
+        }
+
+        .preview-box {
+            min-width: auto;
+            height: auto;
+            margin: 20px auto;
+            width: 95%;
+            
+        }
+        
+        #preview-1-box {
+            float: none;
+        }
+        
+        #preview-2-box {
+            float: none;
+        }
+
+        .preview-content{
+            
+            width: auto;
+            position: static;
+            height: 300px;
+        }
+        
+        #preview-1-bar {
+            width: auto;
+        }
+        
+        #preview-2-bar {
+            width: auto;
+        }
+        
+        .preview-bar {
+            z-index: 10;
+            border-radius: 0;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+    #map-strategies {
+        height: auto;
+    }
+
+        .map-images {
+            position: relative;
+            width: 95%;
+            margin: 5% auto;
+            top: 0;
+        }
+        
+
+    #motto {
+        height: auto;
+    }
+
+    #winston-full-body {
+        display: none;
+
+    }
+
+    #transparent-section {
+        background-attachment: scroll;
+        background-position: 50% 60%;
+        height: 200px;
+    }
+
+    #winston-description {
+        position: static;
+        right: 0;
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+
+    #this-is-winston {
+        overflow: auto;
+        height: auto;
+    }
+
+    #patch-notes {
+        padding-bottom: 0;
+    }
+
+        #patch-nav-n-content {
+            display: block;
+        }
+            
+            #patch-history  {
+                margin-top: 32px;
+            }
+        
+
+    #featured-stats li {
+        width: 48%;
+    }
+
+    #player-avatar {
+        display: none;
+    }
+
+    #player-details {
+        padding-left: 0
+    }
+
+    .hero-name {
+        display: none;
+    }
+
+    .time-played {
+        font-size: 20px;
+    }
+
+    #career-stats-content {
+        height: auto;
+    }
+        .career-stats-column {
+            position: static;
+            top: 0;
+            width: auto;
+        }
+}
+/* END: Media query 768 */
