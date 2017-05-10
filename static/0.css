@@ -189,8 +189,8 @@ h2 {
 
     #mobile-logo {
         position: fixed;
-        top: 20px;
-        left: 20px;
+        top: 25px;
+        left: 25px;
         z-index: 101;
         border-radius: 100px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
@@ -198,10 +198,11 @@ h2 {
         display: none;
     }
     
-    #highlights .mobile-logo-active {
-        background-color: transparent ;
-        box-shadow: none;
-    }
+        #highlights .mobile-logo-active {
+            background-color: transparent ;
+            box-shadow: none;
+        }
+        
         #mobile-logo a {
             background-image: url("./logo.png");
             background-repeat: no-repeat;
@@ -221,36 +222,31 @@ h2 {
             background-color: rgba(0, 0, 0, 0);
             opacity: 1;
         }
-            
-    #mobile-menu ul {
-        position: absolute;
-        top: 100px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        overflow: auto;
-    }
     
     #mobile-menu {
         position: fixed;
         display: none;
-        
-        
         top: 0;
         left: 0;
         bottom: 0;
         width: 210px;
         z-index: 100;
         background-color: rgba(0, 0, 0, 0.9);
-    }
+    }    
+        #mobile-menu ul {
+            position: absolute;
+            top: 110px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: auto;
+        }
+
             #mobile-menu a {
                 display: block;
                 cursor: pointer;
                 font-size: 24px;
-                padding-top: 14px;
-                padding-bottom: 14px;
-                padding-left: 22px;
-                padding-right: 22px;
+                padding: 14px 27px;
                 color: rgba(255, 255, 255, 0.8);
                 text-decoration: none;
                 border-bottom: 2px solid rgba(255, 255, 255, 0.1);
@@ -264,7 +260,7 @@ h2 {
             #overwatch-logo{
                 background-image: url("./overwatch-logo.png");
                 height: 70px;
-                background-size: 82%;
+                background-size: 77%;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 border-bottom: 0;
