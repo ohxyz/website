@@ -14,6 +14,10 @@ body {
     min-width: 0;
     max-width: 740px;
 }
+
+#highlights {
+    height: 280px;
+}
     /* Set to none temporarily */
     #mobile-menu li:nth-child(2){
         display: none;

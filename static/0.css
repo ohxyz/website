@@ -135,6 +135,7 @@ h2 {
     height:710px;
     background-image: url("./winston-highlights.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: 0 8px 6px -6px #222;
 }
 
