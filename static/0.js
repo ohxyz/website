@@ -74,23 +74,36 @@ var DATA = {
 $( document ).ready( function () {
     
     /* START: development warning */
-    if ( window.location.href.indexOf( "ohxyz.com" ) == -1 ) {
+    if ( window.location.href.indexOf( "ohxyz.com" ) === -1 ) {
         $( 'body' ).prepend( '<h2 style="color:red;position:fixed">LOCAL</h2>' );
-    }
+    } 
+    /* END: development warning */
+    
     
     ( function () {
         var $mobileLogo = $( '#mobile-logo' );
         var $mobileMenu = $(' #mobile-menu' );
+        var mobileLogoActiveClass = 'mobile-logo-active';
         
         $( '#mobile-logo a' ).click( function ( event ) {
             event.preventDefault();
-            $mobileLogo.toggleClass( 'mobile-logo-active' );
+            
+            $mobileLogo.toggleClass( mobileLogoActiveClass );
             $mobileMenu.toggle();
         });
         
+        /* BUG FIX START : Add a handler to control #mobile menu */
+        
+        $( window ).resize( function () {
+            
+            if ( $mobileLogo.css( 'display' ) === 'none' ) {
+                $mobileMenu.hide();
+                $mobileLogo.removeClass( mobileLogoActiveClass );
+            }
+        });
+        /* BUG FIX END */
     } )();
-    
-    /* END: development warning */
+
     
     /* START: scroll and fix functionality for #top-nav */
     var $topNav = $( '#top-nav' );
@@ -130,7 +143,7 @@ $( document ).ready( function () {
     setPosition( $topNav, top );
     /* END: scroll and fix functionality for #top-nav */
 
-    /* START: Create stats box starts */
+    /* START: Create stats box */
     ( function ( $ ) {
         /* Generate a career stats box ***     
             <div class="career-stats-box">
@@ -203,7 +216,9 @@ $( document ).ready( function () {
 
             $careerStatsColumn.append( $careerStatsBox );
         }
-    } ) ( jQuery );  /* END: Create and append stats box finishes */
+    } ) ( jQuery );  
+    
+    /* END: Create and append stats box finishes */
 
 } );
 

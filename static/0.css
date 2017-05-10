@@ -222,17 +222,26 @@ h2 {
             opacity: 1;
         }
             
+    #mobile-menu ul {
+        position: absolute;
+        top: 100px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+    }
     
     #mobile-menu {
-        display: none;
-        padding-top: 110px;
         position: fixed;
+        display: none;
+        
+        
         top: 0;
         left: 0;
+        bottom: 0;
         width: 210px;
         z-index: 100;
         background-color: rgba(0, 0, 0, 0.9);
-        border-bottom-right-radius: 4px;
     }
             #mobile-menu a {
                 display: block;
@@ -254,13 +263,13 @@ h2 {
             
             #overwatch-logo{
                 background-image: url("./overwatch-logo.png");
-                height: 65px;
-                background-size: 85%;
+                height: 70px;
+                background-size: 82%;
                 background-repeat: no-repeat;
-                background-position: 18px 50%;
+                background-position: 50% 50%;
                 border-bottom: 0;
                 cursor: default;
-                opacity: 0.3;
+                opacity: 0.2;
             }
             
 
