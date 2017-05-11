@@ -280,13 +280,29 @@ h2 {
     .preview-box {
         position: relative;
         min-width: 420px;
-        height: 110px;
+        height: 120px;
+        top: 10px; /* Give some space for inner content to have shadows */
     }
 
     #preview-1-box {
         float: left;
     }
 
+        
+        .preview-content {
+            width: 180px;
+            height: 100px;
+            background-color: white;
+            border-radius: 2px;
+            position: absolute;
+            box-shadow: 0 0 5px #333;
+        }
+        
+            #trailer {
+                width: 100%;
+                height: 100%;
+            }
+            
     #preview-2-box {
         float: right;
     }
@@ -298,14 +314,36 @@ h2 {
     #preview-2{
         right: 15px;
     }
-
-        .preview-content {
-            width: 180px;
-            height: 100px;
-            border: 1px #ccc dashed;
-            background-color: white;
-            border-radius: 2px;
+        
+        
+        #pro-game-play-link {
+            
+        }
+            #pro-game-play {
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+        .video-play-icon {
+            display: block;
             position: absolute;
+            cursor: pointer;
+            background-image:url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMjU2LDkyLjQ4MWM0NC40MzMsMCw4Ni4xOCwxNy4wNjgsMTE3LjU1Myw0OC4wNjRDNDA0Ljc5NCwxNzEuNDExLDQyMiwyMTIuNDEzLDQyMiwyNTUuOTk5cy0xNy4yMDYsODQuNTg4LTQ4LjQ0OCwxMTUuNDU1Yy0zMS4zNzIsMzAuOTk0LTczLjEyLDQ4LjA2NC0xMTcuNTUyLDQ4LjA2NHMtODYuMTc5LTE3LjA3LTExNy41NTItNDguMDY0QzEwNy4yMDYsMzQwLjU4Nyw5MCwyOTkuNTg1LDkwLDI1NS45OTlzMTcuMjA2LTg0LjU4OCw0OC40NDgtMTE1LjQ1M0MxNjkuODIxLDEwOS41NSwyMTEuNTY4LDkyLjQ4MSwyNTYsOTIuNDgxIE0yNTYsNTIuNDgxIGMtMTEzLjc3MSwwLTIwNiw5MS4xMTctMjA2LDIwMy41MThjMCwxMTIuMzk4LDkyLjIyOSwyMDMuNTIsMjA2LDIwMy41MmMxMTMuNzcyLDAsMjA2LTkxLjEyMSwyMDYtMjAzLjUyQzQ2MiwxNDMuNTk5LDM2OS43NzIsNTIuNDgxLDI1Niw1Mi40ODFMMjU2LDUyLjQ4MXogTTIwNi41NDQsMzU3LjE2MVYxNTkuODMzbDE2MC45MTksOTguNjY2TDIwNi41NDQsMzU3LjE2MXoiPjwvcGF0aD48L3N2Zz4K);
+            background-repeat: no-repeat;
+            height: 55px;
+            width: 55px;
+            background-position: center center;
+            margin-top: 12%;
+            margin-left: 35%;
+            opacity: 0.75;
+            background-color: white;
+            border-radius: 100px;
+            box-shadow: 0 0 5px #000;
+        }
+
+        .video-play-icon:hover {
+            opacity: 0.85;
         }
 
         .preview-bar {
@@ -942,7 +980,6 @@ footer {
             height: auto;
             margin: 20px auto;
             width: 95%;
-            
         }
         
         #preview-1-box {
