@@ -71,6 +71,7 @@ var DATA = {
     ]    
 };
 
+
 $( document ).ready( function () {
     
     /* START: development warning */
@@ -81,13 +82,16 @@ $( document ).ready( function () {
     
     
     ( function () {
+        
         var $mobileLogo = $( '#mobile-logo' );
-        var $mobileMenu = $(' #mobile-menu' );
+        var $mobileMenu = $( '#mobile-menu' );
+        var $mobileLogoLink = $( '#mobile-logo a');
+        
         var mobileLogoActiveClass = 'mobile-logo-active';
         
-        $( '#mobile-logo a' ).click( function ( event ) {
-            event.preventDefault();
+        $mobileLogoLink.on( 'click touchstart', function ( event ) { 
             
+            event.preventDefault();   
             $mobileLogo.toggleClass( mobileLogoActiveClass );
             $mobileMenu.toggle();
         });
@@ -102,6 +106,23 @@ $( document ).ready( function () {
             }
         });
         /* BUG FIX END */
+        
+        /* Hide the menu when click outside.
+        http://stackoverflow.com/questions/1403615 */
+        
+        $( document ).on( 'click touchstart', function ( event ) {
+            
+            var clickedElement = event.target;
+            
+            if ( !$mobileMenu.is( clickedElement )
+                    && !$( clickedElement ).is( $mobileLogoLink )
+                    && $mobileMenu.has( clickedElement ).length === 0 ) {
+
+                $mobileLogo.removeClass( mobileLogoActiveClass );
+                $mobileMenu.hide();
+            }
+        });
+        
     } )();
 
     
