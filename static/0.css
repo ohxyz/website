@@ -279,7 +279,7 @@ h2 {
 
     .preview-box {
         position: relative;
-        min-width: 420px;
+        min-width: 370px;
         height: 120px;
         top: 10px; /* Give some space for inner content to have shadows */
     }
@@ -287,7 +287,6 @@ h2 {
     #preview-1-box {
         float: left;
     }
-
         
         .preview-content {
             width: 180px;
@@ -314,8 +313,7 @@ h2 {
     #preview-2{
         right: 15px;
     }
-        
-        
+
         #pro-game-play-link {
             
         }
@@ -360,14 +358,14 @@ h2 {
 
         #preview-1-bar {
             padding-right: 20px;
-            width: 400px;
+            width: 370px;
             text-align: right;
         }
 
         #preview-2-bar {
             right: 0;
             padding-left: 20px;
-            width: 380px;
+            width: 330px;
         }
 
 #map-strategies {
