@@ -131,7 +131,7 @@ $( document ).ready( function () {
     var top = parseInt( $topNav.css( 'top' ) );
     
     var cssOriginal = {
-        position: 'relative',
+        position: 'absolute',
     };
         
     var cssScrolled = {

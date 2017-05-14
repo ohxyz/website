@@ -132,15 +132,19 @@ h2 {
 }
 
 #highlights {
-    height:710px;
+    position: relative;
     background-image: url("./winston-highlights.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    background-position: center;
+    padding-top: 36%;
     box-shadow: 0 8px 6px -6px #222;
 }
 
     #top-nav {
-        position: relative;
+        position: absolute;
+        left: 0;
+        right: 0;
         top: 30px;
         background-color: rgba(0, 0, 0, 0.75);
         border-radius: 2px;
@@ -960,7 +964,9 @@ footer {
     }
 
     #highlights {
-        height: 300px;
+        background-size: 250%;
+        background-position: 0 0;
+        padding-top: 75%;
     }
         /* Set to none temporarily */
         #mobile-menu li:nth-child(2){
@@ -1037,6 +1043,7 @@ footer {
     }
 
     #transparent-section {
+        margin-top: 8%;
         background-attachment: scroll;
         background-position: 50% 60%;
         height: 200px;
