@@ -75,8 +75,8 @@ var DATA = {
 $( document ).ready( function () {
     
     /* START: development warning */
-    if ( window.location.href.indexOf( "ohxyz.com" ) === -1 ) {
-        $( 'body' ).prepend( '<h2 style="color:red;position:fixed">LOCAL</h2>' );
+    if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
+        $( 'body' ).prepend( '<h2 style="color:red;position:fixed;z-index:999;">LOCAL</h2>' );
     } 
     /* END: development warning */
     
