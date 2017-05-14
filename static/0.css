@@ -150,6 +150,7 @@ h2 {
         border-radius: 2px;
         overflow: hidden;
         z-index: 100; /* make sure it is over every element */
+        width: 100%; /* Center absolute item in IE */
     }
     
         #top-nav li {
