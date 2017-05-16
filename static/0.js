@@ -242,6 +242,8 @@ $( document ).ready( function () {
         }
     } )();
     
+    /* END: Create and append stats box finishes */
+    
     ( function () {
 
         var youtube = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/AJF4poR4MlA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
@@ -257,6 +259,16 @@ $( document ).ready( function () {
         new Popup( options );
         
     } )();
-    /* END: Create and append stats box finishes */
+
+    ( function () {
+        
+        var video = document.getElementById( 'official-trailer' );
+        video.addEventListener( 'ended', function () {
+            this.currentTime = 2;
+        });
+        
+    } )();
+
+    
 
 } );
