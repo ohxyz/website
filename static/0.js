@@ -127,46 +127,50 @@ $( document ).ready( function () {
 
     
     /* START: scroll and fix functionality for #top-nav */
-    var $topNav = $( '#top-nav' );
-    var top = parseInt( $topNav.css( 'top' ) );
-    
-    var cssOriginal = {
-        position: 'absolute',
-    };
+    ( function () {
         
-    var cssScrolled = {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-    };
-
-    function setPosition( $element, originalTop ) {
+        var $topNav = $( '#top-nav' );
+        var top = parseInt( $topNav.css( 'top' ) );
         
-        var scrollTop = $( window ).scrollTop();
-        cssOriginal[ 'top' ] = originalTop;
+        var cssOriginal = {
+            position: 'absolute',
+        };
+            
+        var cssScrolled = {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+        };
 
-        if ( scrollTop > originalTop ) {
-            $topNav.css( cssScrolled );
+        function setPosition( $element, originalTop ) {
+            
+            var scrollTop = $( window ).scrollTop();
+            cssOriginal[ 'top' ] = originalTop;
+
+            if ( scrollTop > originalTop ) {
+                $topNav.css( cssScrolled );
+            }
+            else {
+                $topNav.css( cssOriginal );
+            }
         }
-        else {
-            $topNav.css( cssOriginal );
-        }
-    }
 
-    $( window ).scroll( function () {
+        $( window ).scroll( function () {
+            
+            // console.log('scrolled');
+            setPosition( $topNav, top );
+        } );
         
-        // console.log('scrolled');
+        // Always call this function when page gets reloaded.
         setPosition( $topNav, top );
-    } );
-    
-    // Always call this function when page gets reloaded.
-    setPosition( $topNav, top );
+        
+    } )();
     /* END: scroll and fix functionality for #top-nav */
-
+    
     /* START: Create stats box */
-    ( function ( $ ) {
-        /* Generate a career stats box ***     
+    ( function () {
+        /* Generate a career stats box     
             <div class="career-stats-box">
                 <div class="career-stats-box-title">COMBAT</div>
                 <div class="career-stats-box-content">
@@ -203,7 +207,6 @@ $( document ).ready( function () {
             return $careerStatsBox;
         }
     
-    
         var $careerStatsColumn;
         var $leftColumn = $( '#career-stats-content #left-column' );
         var $middleColumn = $( '#career-stats-content #middle-column' );
@@ -215,7 +218,7 @@ $( document ).ready( function () {
         var startIndex = 0;
         var $careerStatsBox;
         
-        numberInEachColumn = ( numberInEachColumn < numberOfStats ? numberInEachColumn : numberOfStats );
+        numberInEachColumn = ( numberInEachColumn < numberOfStats ) ? numberInEachColumn : numberOfStats ;
         
         for ( ; startIndex < numberOfStats ; startIndex ++ )
         {
@@ -237,11 +240,23 @@ $( document ).ready( function () {
 
             $careerStatsColumn.append( $careerStatsBox );
         }
-    } ) ( jQuery );  
+    } )();
     
+    ( function () {
+
+        var youtube = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/AJF4poR4MlA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+
+        var options = {
+            width: 640,
+            height: 360,
+            top: '20%',
+            content: youtube,
+            triggerElement: '#preview-2-play-icon'
+        };
+
+        new Popup( options );
+        
+    } )();
     /* END: Create and append stats box finishes */
 
 } );
-
-/* Only on Linode */
-console.log( "Linode" );
