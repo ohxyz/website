@@ -30,7 +30,6 @@ function Popup( options ) {
         width: '90%',
         height: 400,
         content: '',
-        border: '',
         backgroundColor: 'transparent',
         onopen: function() {},
         onclose: function() {},
@@ -70,16 +69,18 @@ function Popup( options ) {
         zIndex: 1000,
         width: popupWidth,
         height: popupHeight,
-        border: this.settings.border,
+        border: '1px solid rgba(255, 255, 255, 0.4)',
+        borderRadius: 2,
         backgroundColor: this.settings.backgroundColor,
-        boxShadow: popupShadow,      
+        boxShadow: popupShadow,
+        
     };
     
     var closeButtonCss = {
         
-        top: -50,
+        top: -55,
         position: 'absolute',
-        right: -6,
+        right: -7,
         width: 40,
         height: 40,
         cursor: 'pointer',
@@ -95,9 +96,10 @@ function Popup( options ) {
         width: 40,
         height: 40,
         width: 4,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        borderRadius: 2
         
-    }
+    };
     
     $crossBarOne.css( crossBarCss ).css( 'transform', 'rotate(45deg)' );
     $crossBarTwo.css( crossBarCss ).css( 'transform', 'rotate(-45deg)' );
