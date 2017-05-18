@@ -80,7 +80,6 @@ $( document ).ready( function () {
     } 
     /* END: development warning */
     
-    
     ( function () {
         
         var $mobileLogo = $( '#mobile-logo' );
@@ -88,12 +87,52 @@ $( document ).ready( function () {
         var $mobileLogoLink = $( '#mobile-logo a');
         
         var mobileLogoActiveClass = 'mobile-logo-active';
+		var isMobileMenuClosed = true;
+		var mobileMenuWidth = parseInt( $mobileMenu.css( 'width' ) );
+		
+		// console.log(mobileMenuWidth);
+		function closeMobileMenu() {
+
+			$mobileMenu.animate( {
+				
+				width: 0,
+
+			}, 100 );
+			
+            $mobileLogo.removeClass( mobileLogoActiveClass );
+			isMobileMenuClosed = true;
+		}
+		
+		function openMobileMenu() {
+			
+			$mobileLogo.addClass( mobileLogoActiveClass );
+			$mobileMenu.css( {
+				
+				width: mobileMenuWidth,
+				display: 'block'
+			
+			} );
+			
+			isMobileMenuClosed = false;
+		}
         
+		function toggleMobileMenu() {
+			// console.log( isMobileMenuClosed );
+			
+			if ( isMobileMenuClosed === true ) {
+				
+				openMobileMenu();
+			}
+			else {
+				
+				closeMobileMenu();
+			}
+		}
+		
         $mobileLogoLink.on( 'click touchstart', function ( event ) { 
             
-            event.preventDefault();   
-            $mobileLogo.toggleClass( mobileLogoActiveClass );
-            $mobileMenu.toggle();
+            event.preventDefault();			
+            toggleMobileMenu();
         });
         
         /* BUG FIX START : Add a handler to control #mobile menu */
@@ -101,8 +140,8 @@ $( document ).ready( function () {
         $( window ).resize( function () {
             
             if ( $mobileLogo.css( 'display' ) === 'none' ) {
-                $mobileMenu.hide();
-                $mobileLogo.removeClass( mobileLogoActiveClass );
+				
+                closeMobileMenu();
             }
         });
         /* BUG FIX END */
@@ -110,7 +149,7 @@ $( document ).ready( function () {
         /* Hide the menu when click outside.
         http://stackoverflow.com/questions/1403615 */
         
-        $( document ).on( 'click touchstart', function ( event ) {
+        $( document ).on( 'mousedown touchstart', function ( event ) {
             
             var clickedElement = event.target;
             
@@ -118,10 +157,40 @@ $( document ).ready( function () {
                     && !$( clickedElement ).is( $mobileLogoLink )
                     && $mobileMenu.has( clickedElement ).length === 0 ) {
 
-                $mobileLogo.removeClass( mobileLogoActiveClass );
-                $mobileMenu.hide();
+                closeMobileMenu();
             }
         });
+		
+			
+		/** START: Swipe on side menu **/
+		
+		var setSwipes = function( event, 
+		                          direction,
+									  distance, 
+							          duration, 
+				                      fingerCount, 
+							          fingerData )
+		{  
+			event.preventDefault();
+			console.log( event.target );
+			
+			if ( direction === 'left' ) {
+				
+			    closeMobileMenu();
+			}
+
+		};
+
+		$mobileMenu.swipe( {
+			
+			swipe: setSwipes,
+			
+			threhold: 0,
+			
+			excludedElements: null,
+		} );
+
+		/** END: Swipe on side menu **/
         
     } )();
 
@@ -244,6 +313,7 @@ $( document ).ready( function () {
     
     /* END: Create and append stats box finishes */
     
+	/* START: Create youtube modal popup */
     ( function () {
 
         var youtube = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/AJF4poR4MlA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
@@ -255,7 +325,7 @@ $( document ).ready( function () {
             content: youtube,
             triggerElement: '#preview-2-play-icon'
         };
-
+		
         new Popup( options );
         
     } )();
@@ -268,7 +338,8 @@ $( document ).ready( function () {
         });
         
     } )();
+	/* END: Create youtube modal popup */
+	
 
-    
 
 } );
