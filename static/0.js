@@ -87,51 +87,51 @@ $( document ).ready( function () {
         var $mobileLogoLink = $( '#mobile-logo a');
         
         var mobileLogoActiveClass = 'mobile-logo-active';
-		var isMobileMenuClosed = true;
-		var mobileMenuWidth = parseInt( $mobileMenu.css( 'width' ) );
-		
-		// console.log(mobileMenuWidth);
-		function closeMobileMenu() {
-
-			$mobileMenu.animate( {
-				
-				width: 0,
-
-			}, 100 );
-			
-            $mobileLogo.removeClass( mobileLogoActiveClass );
-			isMobileMenuClosed = true;
-		}
-		
-		function openMobileMenu() {
-			
-			$mobileLogo.addClass( mobileLogoActiveClass );
-			$mobileMenu.css( {
-				
-				width: mobileMenuWidth,
-				display: 'block'
-			
-			} );
-			
-			isMobileMenuClosed = false;
-		}
+        var isMobileMenuClosed = true;
+        var mobileMenuWidth = parseInt( $mobileMenu.css( 'width' ) );
         
-		function toggleMobileMenu() {
-			// console.log( isMobileMenuClosed );
-			
-			if ( isMobileMenuClosed === true ) {
-				
-				openMobileMenu();
-			}
-			else {
-				
-				closeMobileMenu();
-			}
-		}
-		
+        // console.log(mobileMenuWidth);
+        function closeMobileMenu() {
+
+            $mobileMenu.animate( {
+            
+                width: 0,
+
+            }, 100 );
+            
+            $mobileLogo.removeClass( mobileLogoActiveClass );
+            isMobileMenuClosed = true;
+        }
+        
+        function openMobileMenu() {
+            
+            $mobileLogo.addClass( mobileLogoActiveClass );
+            $mobileMenu.css( {
+                
+                width: mobileMenuWidth,
+                display: 'block'
+            
+            } );
+            
+            isMobileMenuClosed = false;
+        }
+        
+        function toggleMobileMenu() {
+            // console.log( isMobileMenuClosed );
+            
+            if ( isMobileMenuClosed === true ) {
+                
+                openMobileMenu();
+            }
+            else {
+                
+                closeMobileMenu();
+            }
+        }
+        
         $mobileLogoLink.on( 'click touchstart', function ( event ) { 
             
-            event.preventDefault();			
+            event.preventDefault();
             toggleMobileMenu();
         });
         
@@ -140,7 +140,7 @@ $( document ).ready( function () {
         $( window ).resize( function () {
             
             if ( $mobileLogo.css( 'display' ) === 'none' ) {
-				
+                
                 closeMobileMenu();
             }
         });
@@ -160,37 +160,34 @@ $( document ).ready( function () {
                 closeMobileMenu();
             }
         });
-		
-			
-		/** START: Swipe on side menu **/
-		
-		var setSwipes = function( event, 
-		                          direction,
-									  distance, 
-							          duration, 
-				                      fingerCount, 
-							          fingerData )
-		{  
-			event.preventDefault();
-			console.log( event.target );
-			
-			if ( direction === 'left' ) {
-				
-			    closeMobileMenu();
-			}
+        
+        /** START: Swipe on side menu **/
+        
+        var setSwipes = function( event, 
+                                  direction,
+                                  distance, 
+                                  duration, 
+                                  fingerCount, 
+                                  fingerData )
+        {  
 
-		};
+            if ( direction === 'left' ) {
 
-		$mobileMenu.swipe( {
-			
-			swipe: setSwipes,
-			
-			threhold: 0,
-			
-			excludedElements: null,
-		} );
+                closeMobileMenu();
+            }
 
-		/** END: Swipe on side menu **/
+        };
+
+        $mobileMenu.swipe( {
+            
+            swipe: setSwipes,
+            
+            threhold: 0,
+            
+            excludedElements: null,
+        } );
+
+        /** END: Swipe on side menu **/
         
     } )();
 
@@ -313,7 +310,7 @@ $( document ).ready( function () {
     
     /* END: Create and append stats box finishes */
     
-	/* START: Create youtube modal popup */
+    /* START: Create youtube modal popup */
     ( function () {
 
         var youtube = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/AJF4poR4MlA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
@@ -325,7 +322,7 @@ $( document ).ready( function () {
             content: youtube,
             triggerElement: '#preview-2-play-icon'
         };
-		
+        
         new Popup( options );
         
     } )();
@@ -338,8 +335,8 @@ $( document ).ready( function () {
         });
         
     } )();
-	/* END: Create youtube modal popup */
-	
+    /* END: Create youtube modal popup */
+    
 
 
 } );
