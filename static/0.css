@@ -211,8 +211,9 @@ h2 {
         opacity: 0.85;
         display: none;
     }
-    
-        #highlights .mobile-logo-active {
+        
+        /* Removed #highlights fix the bug on mobile for inconsitent behavior */
+        .mobile-logo-active {
             background-color: transparent ;
             box-shadow: none;
         }

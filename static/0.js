@@ -100,7 +100,7 @@ $( document ).ready( function () {
             }, 100 );
             
             
-            /* BROWSER BUG: Mobile browser seems to fail to change the CSS on touch events.
+            /* BUG: Mobile browser seems to fail to change the CSS on touch events.
              * Following code same as removeClass effect does not work either.
              */
             
@@ -142,10 +142,11 @@ $( document ).ready( function () {
             }
         }
         
-        
-        $mobileLogoLink.on( 'mouseup touchend', function ( event ) { 
-            
-            event.preventDefault();
+        /* By only using mouseup or click event preventing finger accidently touch the logo
+         * and shows the menu. It makes sure the menu is only opened after the swipe, if there
+         * is one, the finger is still on logo */
+        $mobileLogoLink.on( 'mouseup', function ( event ) { 
+
             toggleMobileMenu();
         });
         
@@ -162,8 +163,8 @@ $( document ).ready( function () {
         
         /* Hide the menu when click outside.
         http://stackoverflow.com/questions/1403615 */
-        
-        $( document ).on( 'mousedown touchstart', function ( event ) {
+ 
+        $( document ).on( 'click touchstart', function ( event ) {
             
             var clickedElement = event.target;
             
