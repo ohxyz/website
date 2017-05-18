@@ -84,7 +84,7 @@ $( document ).ready( function () {
         
         var $mobileLogo = $( '#mobile-logo' );
         var $mobileMenu = $( '#mobile-menu' );
-        var $mobileLogoLink = $( '#mobile-logo a');
+        var $mobileLogoLink = $( '#mobile-logo');
         
         var mobileLogoActiveClass = 'mobile-logo-active';
         var isMobileMenuClosed = true;
@@ -99,8 +99,21 @@ $( document ).ready( function () {
 
             }, 100 );
             
+            
+            /* BROWSER BUG: Mobile browser seems to fail to change the CSS on touch events.
+             * Following code same as removeClass effect does not work either.
+             */
+            
+            /*
+            $mobileLogo.css( {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 1)'
+            } );
+            */
+            
             $mobileLogo.removeClass( mobileLogoActiveClass );
             isMobileMenuClosed = true;
+
         }
         
         function openMobileMenu() {
@@ -129,7 +142,8 @@ $( document ).ready( function () {
             }
         }
         
-        $mobileLogoLink.on( 'click touchstart', function ( event ) { 
+        
+        $mobileLogoLink.on( 'mouseup touchend', function ( event ) { 
             
             event.preventDefault();
             toggleMobileMenu();
