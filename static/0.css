@@ -474,6 +474,7 @@ h2 {
     padding-top: 48px;
     padding-bottom: 32px;
     color: rgba(255, 255, 255, 0.8);
+    display: none; /* Not to show until ajax content loaded */
     overflow: hidden; /* temp solution for patch content overflows when zoom out */
 }
     #patch-nav-n-content{
@@ -505,50 +506,51 @@ h2 {
                 padding: 20px 0;
             }
         
-        #patch-article {          
+        #patch-article {
+            font-family: arial, sans-serif;
+            font-size: 16px;
             padding-left: 40px;
             padding-right: 20px;
             order: 2;
         }
-            #patch-notes-heading {
+            #patch-article h1 {
+                font-family: "Bebas Neue", arial, sans-serif;
                 font-size: 48px;
                 font-style: italic;
-
                 color: white;
             }
             
-            #patch-content {
-                font-size: 16px;
-                font-family: arial, sans-serif;
+            #patch-article  {
+                
             }
             
-            #patch-content h2 {
+            #patch-article h2 {
                 color: white;
                 font-size: 32px;
                 padding: 16px 0;
                 font-family: "Bebas Neue", arial, sans-serif;
             }
             
-            #patch-content p {
+            #patch-article p {
                 padding: 14px 0;
                 line-height: 24px;
             }
             
             
-            #patch-content strong {
+            #patch-article strong {
                 font-size: 16px;
                 font-weight: bold;
             }
             
-            #patch-content em {
+            #patch-article em {
                 font-style: italic;
             }
             
-            #patch-content ul {
+            #patch-article ul {
                 list-style: square;
             }
         
-            #patch-content li {
+            #patch-article li {
                 line-height: 24px;
 
             }
