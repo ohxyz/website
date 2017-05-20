@@ -485,6 +485,7 @@ h2 {
             border-radius: 4px;
             margin: 0 12px;
             background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
             order:1;
         }
             #patch-history h2{
@@ -1068,7 +1069,9 @@ footer {
             
             #patch-history  {
                 border-radius: 0;
-                margin: 32px 0 0 0;  
+                margin: 32px 0 0 0;
+                border-left: 0;
+                border-right: 0;
             }
         
 
