@@ -128,17 +128,15 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
     // Use hammer.js because that jQuery swipe plugin prevents
     // menu's content from moving up or down. It was found on 
     // a horizental screen.
-    var hammertime = new Hammer( $mobileMenu.get(0), {
-        
-        recognizer: [
-            [Hammer.Swipe,{ direction: Hammer.DIRECTION_LEFT }]
-        ]
-    });
+    var hammertime = new Hammer( $mobileMenu.get(0));
     
     hammertime.on( 'swipe' , function( hammerEvent ) {
-        
-        console.log( hammerEvent );
-        closeMobileMenu();
+
+        if ( hammerEvent.direction === Hammer.DIRECTION_LEFT ) {
+            
+            closeMobileMenu();
+        }
+
     });
     /** END: Swipe on side menu */
     
