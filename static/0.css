@@ -468,12 +468,10 @@ h2 {
     }
 
 #patch-notes {
-    background-image: url("patch-notes-background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("patch-notes-background.png");
     padding-top: 48px;
     padding-bottom: 32px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
     display: none; /* Not to show until ajax content loaded */
     overflow: hidden; /* temp solution for patch content overflows when zoom out */
 }
@@ -481,11 +479,12 @@ h2 {
         display: flex;
     }   
         #patch-history {
-            padding: 24px 24px;
+            padding: 24px 16px;
             height: 330px;
             min-width: 160px;
             border-radius: 4px;
-            background: rgba(255, 255, 255, 0.05);
+            margin: 0 12px;
+            background: rgba(0, 0, 0, 0.3);
             order:1;
         }
             #patch-history h2{
@@ -1068,7 +1067,8 @@ footer {
         }
             
             #patch-history  {
-                margin-top: 32px;
+                border-radius: 0;
+                margin: 32px 0 0 0;  
             }
         
 
