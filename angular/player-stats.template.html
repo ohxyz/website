@@ -1,0 +1,21 @@
+<section id="profile" class="stats-section-box">
+    <div id="player-avatar">
+        <img alt="Player avatar" src="static/avatar.png" />
+    </div>
+    <div id="player-details">
+        <div id="player-name">{{ $ctrl.stats.name }}</div>
+        <div id="games-won">{{ $ctrl.stats.gamesWon}} GAMES WON</div>
+    </div>
+</section>
+<section id="featured-stats" class="stats-section-box">
+    <h1>FEATURED STATS</h1>
+    <section id="featured-stats-content">
+        <ul>
+            <li ng-repeat="( key, value ) in $ctrl.featuredStats">
+                <div id="eliminations-average" class="featured-stats-icon"></div>
+                <div class="featured-stats-number">{{ value }} </div>
+                <div class="featured-stats-text">{{ key }}</div>  
+            </li>
+        </ul>
+    </section>
+</section>

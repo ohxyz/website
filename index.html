@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html ng-app="ohxyzApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -10,6 +10,8 @@
     <link rel="icon" href="static/website-icon.png" />
     <link rel="stylesheet" href="static/0.css" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/app.js"></script>
 </head>
 <body>
     <!--[if lte IE 9]>
@@ -103,62 +105,8 @@
             </div>
         </section>
         <section id="stats" class="section-box" >
-            <section id="profile" class="stats-section-box">
-                <div id="player-avatar">
-                    <img alt="Player avatar" src="static/avatar.png" />
-                </div>
-                <div id="player-details">
-                    <div id="player-name">OHXYZ-COM</div>
-                    <div id="games-won">456 GAMES WON</div>
-                </div>
-            </section>
-            <section id="featured-stats" class="stats-section-box">
-                <h1>FEATURED STATS</h1>
-                <section id="featured-stats-content">
-                    <ul>
-                        <li>
-                            <div id="eliminations-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">24.4</div>
-                            <div class="featured-stats-text">ELIMIATIONS - AVERAGE</div>  
-                        </li>
-                        <li>
-                            <div id="damage-done-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">6,718</div>
-                            <div class="featured-stats-text">DAMAGE DONE - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="deaths-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">9.5</div>
-                            <div class="featured-stats-text">DEATHS - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="final-blows-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">10.16</div>
-                            <div class="featured-stats-text">FINAL BLOWS - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="healing-done-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">36</div>
-                            <div class="featured-stats-text">HEALING DONE - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="objective-kills-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">9.84</div>
-                            <div class="featured-stats-text">OBJECTIVE KILLS - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="objective-time-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">01:24</div>
-                            <div class="featured-stats-text">OBJECTIVE TIME - AVERAGE</div>
-                        </li>
-                        <li>
-                            <div id="solo-kills-average" class="featured-stats-icon"></div>
-                            <div class="featured-stats-number">2.26</div>
-                            <div class="featured-stats-text">SOLO KILLS - AVERAGE</div>
-                        </li>
-                    </ul>
-                </section>
-            </section>
+            <player-stats></player-stats>
+            
             <section id="top-heros" class="stats-section-box">
                 <h1>TOP HEROS</h1>
                 <section id="top-heros-content">
