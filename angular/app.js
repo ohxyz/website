@@ -25,5 +25,12 @@ angular
             
         }]
 
-    } );
+    } )
+    .filter( 'cssClass', function () {
+        
+        return function ( input ) {
+            
+            return input.replace(' - ', '-').replace(/\s/g, '-');
+        }
+    });
     

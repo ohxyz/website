@@ -12,7 +12,7 @@
     <section id="featured-stats-content">
         <ul>
             <li ng-repeat="( key, value ) in $ctrl.featuredStats">
-                <div id="eliminations-average" class="featured-stats-icon"></div>
+                <div id="{{ key | cssClass }}" class="featured-stats-icon"></div>
                 <div class="featured-stats-number">{{ value }} </div>
                 <div class="featured-stats-text">{{ key }}</div>  
             </li>
