@@ -125,31 +125,21 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
     });
     
     /** START: Swipe on side menu */
+    // Use hammer.js because that jQuery swipe plugin prevents
+    // menu's content from moving up or down. It was found on 
+    // a horizental screen.
+    var hammertime = new Hammer( $mobileMenu.get(0), {
+        
+        recognizer: [
+            [Hammer.Swipe,{ direction: Hammer.DIRECTION_LEFT }]
+        ]
+    });
     
-    var setSwipes = function( event, 
-                              direction,
-                              distance, 
-                              duration, 
-                              fingerCount, 
-                              fingerData )
-    {  
-
-        if ( direction === 'left' ) {
-
-            closeMobileMenu();
-        }
-
-    };
-
-    $mobileMenu.swipe( {
+    hammertime.on( 'swipe' , function( hammerEvent ) {
         
-        swipe: setSwipes,
-        
-        threhold: 0,
-        
-        excludedElements: null,
-    } );
-
+        console.log( hammerEvent );
+        closeMobileMenu();
+    });
     /** END: Swipe on side menu */
     
 } )();
