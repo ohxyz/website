@@ -131,6 +131,7 @@ h2 {
     margin: 0 auto;
 }
 
+
 #highlights {
     position: relative;
     background-image: url("./winston-highlights.jpg");
@@ -140,7 +141,15 @@ h2 {
     height: 670px;
     box-shadow: 0 8px 6px -6px #222;
 }
-
+    .pattern-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("./pattern.png");
+    }
+    
     #top-nav {
         position: absolute;
         left: 0;
