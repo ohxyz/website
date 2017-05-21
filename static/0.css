@@ -281,7 +281,7 @@ h2 {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 #previews {
@@ -422,8 +422,8 @@ h2 {
         }
 
 #transparent-section {
-    margin-top: 60px;
-    height: 300px;
+    margin-top: 80px;
+    height: 400px;
     background-image: url("./gibraltar.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -521,7 +521,7 @@ h2 {
         #patch-article {
             font-family: arial, sans-serif;
             font-size: 16px;
-            padding-left: 40px;
+            padding-left: 32px;
             padding-right: 20px;
             order: 2;
         }
@@ -1073,7 +1073,6 @@ footer {
     }
 
     #this-is-winston {
-        overflow: auto;
         height: auto;
     }
 
