@@ -213,17 +213,14 @@ h2 {
         cursor: pointer;
         border: 4px solid rgba(255, 255, 255, 0.7);
         border-radius: 100px;
-        opacity: 0.85;
+        opacity: 0.8;
         display: none;
     }
         
         /* Removed #highlights fix the bug on mobile for inconsitent behavior */
-        .mobile-logo-active {
-            background-color: transparent ;
+        #mobile-logo.mobile-logo-active {
+            /*background-color: transparent ;*/
             box-shadow: none;
-        }
-
-        #mobile-logo:hover {
             opacity: 1;
         }
     

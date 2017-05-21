@@ -1,7 +1,5 @@
 /* Main JS */
 
-
-// $( document ).ready( function () {
     
 /* START: Development warning */
 if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
@@ -35,7 +33,6 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
     
     var $mobileLogo = $( '#mobile-logo' );
     var $mobileMenu = $( '#mobile-menu' );
-    var $mobileLogoLink = $( '#mobile-logo');
     
     var mobileLogoActiveClass = 'mobile-logo-active';
     var isMobileMenuClosed = true;
@@ -49,17 +46,8 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
             width: 0,
 
         }, 100 );
-        
-        
-        /** BUG: Mobile browser seems to fail to change the CSS on touch events.
-         *  Following code same as removeClass effect does not work either. */
-        
-        /**
-        $mobileLogo.css( {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            boxShadow: '0 0 10px rgba(0, 0, 0, 1)'
-        } );
-        */
+
+        // BUG: Mobile browser has inconsistent behaviour at :hover
         
         $mobileLogo.removeClass( mobileLogoActiveClass );
         isMobileMenuClosed = true;
@@ -96,11 +84,11 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
     // and shows the menu. It makes sure the menu is only opened after the swipe, if there
     // is one, the finger is still on logo
      
-    $mobileLogoLink.on( 'mouseup', function ( event ) { 
+    $mobileLogo.on( 'mouseup', function ( event ) { 
 
         toggleMobileMenu();
     });
-    
+       
     /** BUG FIX START : Add a handler to control #mobile menu */
     $( window ).resize( function () {
         
@@ -117,7 +105,7 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
         var clickedElement = event.target;
         
         if ( !$mobileMenu.is( clickedElement )
-                && !$( clickedElement ).is( $mobileLogoLink )
+                && !$( clickedElement ).is( $mobileLogo )
                 && $mobileMenu.has( clickedElement ).length === 0 ) {
 
             closeMobileMenu();
@@ -303,6 +291,3 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
 } )();
 /* END: Create youtube modal popup */
     
-    
-
-// } );
