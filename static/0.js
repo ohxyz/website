@@ -148,10 +148,11 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
 ( function () {
     
     var $topNav = $( '#top-nav' );
-    var top = parseInt( $topNav.css( 'top' ) );
-    
+
     var cssOriginal = {
         position: 'absolute',
+        bottom: 0,
+        top: 'auto'
     };
         
     var cssScrolled = {
@@ -159,12 +160,13 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
         top: 0,
         left: 0,
         right: 0,
+        bottom: 'auto'
     };
 
-    function setPosition( $element, originalTop ) {
+    function setPosition( originalTop ) {
         
         var scrollTop = $( window ).scrollTop();
-        cssOriginal[ 'top' ] = originalTop;
+        cssOriginal.top = originalTop;
 
         if ( scrollTop > originalTop ) {
             $topNav.css( cssScrolled );
@@ -173,15 +175,26 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
             $topNav.css( cssOriginal );
         }
     }
-
-    $( window ).scroll( function () {
-        
-        // console.log('scrolled');
-        setPosition( $topNav, top );
-    } );
     
+    function resetPosition() {
+        
+        $topNav.css( {
+            bottom: 0,
+            top: 'auto'
+        } );
+        
+        var cssTop = parseInt( $topNav.css( 'top' ) );
+        
+        setPosition( cssTop );
+    }
+    
+    $( window ).on( 'scroll resize', function () {
+        
+        resetPosition();
+    } );
+
     // Always call this function when page gets reloaded.
-    setPosition( $topNav, top );
+    setPosition( top );
     
 } )();
 /* END: scroll and fix functionality for #top-nav */
