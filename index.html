@@ -83,23 +83,25 @@
             </div>
             <div id="winston-full-body"></div>
         </section>
-        <section id="patch-notes">
+        <section id="patch-notes" ng-controller="PatchNotes as patchNote">
             <div id="patch-nav-n-content" class="section-box">
-                <article id="patch-article">
+                <article id="patch-article" 
+                         ng-include="patchNoteUrl"
+                         ng-init="patchNote.loadPatchNote( 0 )">
                 </article>
                 <nav id="patch-history">
                     <h2>RECENT PATCH NOTES</h2>
                     <ul>
                         <li>
-                            <a href="#patch-article">Patch 1.10.1.1</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 0 )" >Patch 1.10.1.1</a>
                             <div class="date">27/04/2017</a>
                         </li>
                         <li>
-                            <a href="#patch-article">Patch 1.10.0.1b</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 1 )">Patch 1.10.0.1b</a>
                             <div class="date">18/04/2017</a>
                         </li>
                         <li>
-                            <a href="#patch-article">Patch 1.10.0.1a</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 2 )">Patch 1.10.0.1a</a>
                             <div class="date">11/04/2017</a>
                         </li>
                     </ul>

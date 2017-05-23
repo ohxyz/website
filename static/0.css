@@ -481,7 +481,7 @@ h2 {
     padding-top: 48px;
     padding-bottom: 32px;
     color: rgba(255, 255, 255, 1);
-    display: none; /* Not to show until ajax content loaded */
+    display: block; /* Not to show until ajax content loaded */
     overflow: hidden; /* temp solution for patch content overflows when zoom out */
 }
     #patch-nav-n-content{
@@ -496,6 +496,7 @@ h2 {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
             order:1;
+            flex:1;
         }
             #patch-history h2{
                 border-bottom: 4px #aaa solid;
@@ -521,6 +522,7 @@ h2 {
             padding-left: 32px;
             padding-right: 20px;
             order: 2;
+            flex: 5;
         }
             #patch-article h1 {
                 font-family: "Bebas Neue", arial, sans-serif;

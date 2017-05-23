@@ -7,26 +7,6 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
 } 
 /* END: Development warning */
 
-/* START: Load patch content to index.html */
-
-( function () {
-    
-    var patchContentUrl = 'static/patch-note-27-apr-2017.html';
-    var $patchArticle = $( '#patch-article' );
-    var $patchNotes = $( '#patch-notes' );
-    
-    $.ajax( {
-        
-        url: patchContentUrl,
-
-    } ).done( function ( data ) {
-
-        $patchArticle.append( data );
-        $patchNotes.show();
-    } );
-    
-} )();
-/* END: Load patch content to index.html */
 
 /* START: Mobile menu */
 ( function () {
