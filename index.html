@@ -18,6 +18,7 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
     <header id="highlights">
+        <div id="quotes-box"></div>
         <nav id="top-nav">
             <div class="section-box">
                 <ul>
@@ -87,21 +88,25 @@
             <div id="patch-nav-n-content" class="section-box">
                 <article id="patch-article" 
                          ng-include="patchNoteUrl"
-                         ng-init="patchNote.loadPatchNote( 0 )">
+                         ng-init="patchNote.loadPatchNote( '23-05-2017' )">
                 </article>
                 <nav id="patch-history">
                     <h2>RECENT PATCH NOTES</h2>
                     <ul>
                         <li>
-                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 0 )" >Patch 1.10.1.1</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '23-05-2017' )" >Patch 1.11.1.2</a>
+                            <div class="date">23/05/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '27-04-2017' )" >Patch 1.10.1.1</a>
                             <div class="date">27/04/2017</a>
                         </li>
                         <li>
-                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 1 )">Patch 1.10.0.1b</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '18-04-2017' )">Patch 1.10.0.1b</a>
                             <div class="date">18/04/2017</a>
                         </li>
                         <li>
-                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( 2 )">Patch 1.10.0.1a</a>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '11-04-2017' )">Patch 1.10.0.1a</a>
                             <div class="date">11/04/2017</a>
                         </li>
                     </ul>
@@ -189,6 +194,7 @@
     <script>document.write('<script src="static/jquery.min.js"><\/script>');</script>
     <script src="static/popup.js"></script>
     <script src="static/hammer.min.js"></script>
+    <script src="static/typed.min.js"></script>
     <script src="static/data.js"></script>
     <script src="static/0.js"></script>
     <!-- Google Analytics code -->

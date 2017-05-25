@@ -112,6 +112,61 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
 /* END: Mobile menu */
 
 
+/* START: Quotes typewriter effect */
+// This pluggin has some bugs
+( function () {
+    
+    var newLine = '<br /><br />^3000';
+    
+    Typed.new( '#quotes-box', {
+        
+        strings: [ 
+        
+            '" Imagination is the essence of discovery. "', 
+            '" Curious. "',
+            '" Don\'t get me angry. "',
+            '" How embarrassing! "',
+            '" No, I do not want a banana. "',
+            '" Natural selection! "',
+            '" No monkey business. "',
+            '" Did someone say peanut butter? "',
+            '" Sorry about that! "',
+            '" The power of science! "',
+            '" Houston, uhh, we have a problem. "', 
+            
+            'D.VA: "A giant gorilla! Just like in those old video games!"' + newLine +
+            'Winston: "I get that a lot."', 
+            
+            'Lucio: "Winston, how\'s it hangin\'?"' + newLine +
+            'Winston: "Uhm, okay, I guess. ' + '<br />^1000' +
+            'We got this big mission coming up -- ^1000 Oh, I get it."',
+            
+            'Winston: "Genji, this is just like old times."' + newLine +
+            'Genji: "Our paths cross for now. ^1000 As to the future, ^1000 we shall see."',
+            
+            'Mei: "I love your glasses, ^1000 so cute!"' + newLine +
+            'Winston: "Oh, ^1000 uhm, ^1000 thanks. I like yours, too."'
+        
+        ],
+        
+        typeSpeed: 0,
+        
+        shuffle: true,
+        
+        fadeOut: true,
+        
+        fadeOutDelay: 3000,
+        
+        contentType: 'html',
+
+        cursorChar: '',
+        
+    });
+
+} )();
+
+/* END: Quotes typewriter effect */
+
 /* START: scroll and fix functionality for #top-nav */
 ( function () {
     

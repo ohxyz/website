@@ -144,6 +144,20 @@ h2 {
     right: 0;
     bottom: 0;
 }
+    #quotes-box {
+        position: absolute;
+        top: 4%;
+        right: 2%;
+        left: 55%;
+        font-size: 4.3vw;
+        color: rgba( 255, 255, 255, 0.9 );
+        text-shadow: 0 4px 4px rgba( 0, 0, 0, 1 );
+        text-align: left;
+        word-wrap: break-word;
+        bottom: 64px;
+        overflow: hidden;
+        display: block;
+    }
     
     #top-nav {
         position: absolute;
@@ -489,7 +503,7 @@ h2 {
     }   
         #patch-history {
             padding: 24px 16px;
-            height: 330px;
+            height: 400px;
             min-width: 160px;
             border-radius: 4px;
             margin: 0 12px;
@@ -978,7 +992,12 @@ footer {
         height: auto;
         position: relative;
     }
-    
+        
+        #quotes-box{
+            display: none;
+        }
+        
+        
     #main {
         position: relative;
         

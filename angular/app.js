@@ -41,26 +41,13 @@ angular
         
         this.patchNoteUrl = '';
         
-        this.loadPatchNote = function ( noteId ) {
+        this.loadPatchNote = function ( patchDate ) {
             
-            if ( noteId === 0 ) {
-                
-                this.patchNoteUrl = 'patch-notes/27-apr-2017.html';
-            }
-            else if ( noteId === 1 ) {
-                
-                this.patchNoteUrl = 'patch-notes/18-apr-2017.html';
-            }
-            else if ( noteId === 2 ) {
-                
-                this.patchNoteUrl = 'patch-notes/11-apr-2017.html';
-            }
-            else {
-                return;
-            }
+            console.log( patchDate );
+            
+            this.patchNoteUrl = 'patch-notes/' + patchDate + '.html';
             
             $scope.patchNoteUrl = this.patchNoteUrl;
- 
         };
         
         
