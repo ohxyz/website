@@ -139,7 +139,7 @@ if ( window.location.href.indexOf( "ohxyz" ) === -1 ) {
             
             'Lucio: "Winston, how\'s it hangin\'?"' + newLine +
             'Winston: "Uhm, okay, I guess. ' + '<br />^1000' +
-            'We got this big mission coming up -- ^1000 Oh, I get it."',
+            'Got this big mission coming up -- ^1000 Oh, I get it."',
             
             'Winston: "Genji, this is just like old times."' + newLine +
             'Genji: "Our paths cross for now. ^1000 As to the future, ^1000 we shall see."',
