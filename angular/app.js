@@ -4,7 +4,6 @@ angular.module( 'ohxyzApp', [ 'playerStats', 'patchNotes' ] );
 angular.module( 'playerStats', [] );
 angular.module( 'patchNotes', []);
 
-
 angular
     .module( 'playerStats' )
     .component( 'playerStats', {
@@ -49,10 +48,6 @@ angular
             
             $scope.patchNoteUrl = this.patchNoteUrl;
         };
-        
-        
-        
-        
-        
-    } ] )
+
+    } ] );
     
