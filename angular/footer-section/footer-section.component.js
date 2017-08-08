@@ -1,4 +1,6 @@
 /* START: Footer section */
+angular.module( 'footerSection', [] );
+
 angular
     .module( 'footerSection' )
     .component( 'footerSection', {

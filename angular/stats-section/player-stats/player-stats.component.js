@@ -1,3 +1,4 @@
+angular.module( 'playerStats', [] );
 
 angular
     .module( 'playerStats' )

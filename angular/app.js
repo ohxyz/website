@@ -1,10 +1,7 @@
-angular.module( 'ohxyzApp', [ 'statsSection', 'patchNotes', 'footerSection', 'playerStats' ] );
-angular.module( 'playerStats', [] );
+angular.module( 'ohxyzApp', [ 'statsSection', 'patchNotes', 'footerSection' ] );
+
 angular.module( 'patchNotes', [] );
-angular.module( 'footerSection', [] );
-angular.module( 'statsSection', [] );
-    
-    
+
 /* START: Patch notes section */
 angular
     .module( 'patchNotes' )
