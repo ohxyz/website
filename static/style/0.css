@@ -157,7 +157,7 @@ h2 {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba( 0, 0, 0, 0.1 );
         overflow: hidden;
         background-image: url("./images/pattern.png");
         z-index: 100; /* make sure it is over every element */

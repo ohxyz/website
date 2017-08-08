@@ -1,53 +1,36 @@
-/* Use angular to render player's stats*/
-
-angular.module( 'ohxyzApp', [ 'playerStats', 'patchNotes' ] );
+angular.module( 'ohxyzApp', [ 'statsSection', 'patchNotes', 'footerSection', 'playerStats' ] );
 angular.module( 'playerStats', [] );
-angular.module( 'patchNotes', []);
-
-angular
-    .module( 'playerStats' )
-    .component( 'playerStats', {
-        
-        templateUrl: 'angular/player-stats.template.html',
-        
-        controller: [ '$http', function ( $http ) {
-            
-            var self = this;
-            
-            $http
-                .get( 'angular/ohxyz-com-stats.json' )
-                .then( function ( response ) {
-                    
-                    self.stats = response.data;
-                    self.featuredStats = self.stats.featuredStats;
-                    
-                } );
-            
-        }]
-
-    } )
-    .filter( 'cssClass', function () {
-        
-        return function ( input ) {
-            
-            return input.replace(' - ', '-').replace(/\s/g, '-');
-        }
-    });
+angular.module( 'patchNotes', [] );
+angular.module( 'footerSection', [] );
+angular.module( 'statsSection', [] );
     
+    
+/* START: Patch notes section */
 angular
     .module( 'patchNotes' )
-    .controller( 'PatchNotes', [ '$scope', function( $scope ) {
+    .controller( 'PatchNotesController', [ '$scope', function( $scope ) {
         
         this.patchNoteUrl = '';
+        this.notes = [
+        
+            { name: 'Patch 1.11.1.2a',  date: '2017-06-06' },
+            { name: 'Patch 1.11.1.2b',  date: '2017-05-23' },
+            { name: 'Patch 1.10.11',    date: '2017-04-27' },
+            { name: 'Patch 1.10.0.1b',  date: '2017-04-18' },
+            { name: 'Patch 1.10.0.1a',  date: '2017-04-11' },
+        
+        ];
         
         this.loadPatchNote = function ( patchDate ) {
             
             console.log( patchDate );
             
-            this.patchNoteUrl = 'patch-notes/' + patchDate + '.html';
+            this.patchNoteUrl = 'static/patch-notes/' + patchDate + '.html';
             
             $scope.patchNoteUrl = this.patchNoteUrl;
         };
 
     } ] );
+/* END: Patch notes section */
+    
     
