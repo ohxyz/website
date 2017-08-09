@@ -18,7 +18,7 @@ angular
                     self.featuredStats = self.stats.featuredStats;
                     
                 } );
-        }]
+        } ]
 
     } )
     .filter( 'cssClass', function () {

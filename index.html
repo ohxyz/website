@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="ohxyzApp">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Overwatch Winston - ohxyz.com</title>
     <meta name="description" content="A Winston player of Overwatch" />
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="icon" href="static/style/images/website-icon.png" />
     <link rel="stylesheet" href="static/style/0.css" />
-    <link rel="apple-touch-icon" href="static/style/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="static/style/images/apple-touch-icon.png" />
 </head>
 <body>
     <header id="highlights">
@@ -78,23 +78,7 @@
             </div>
             <div id="winston-full-body"></div>
         </section>
-        <section id="patch-notes" ng-controller="PatchNotesController as patchNotesController">
-            <div id="patch-nav-n-content" class="section-box">
-                <article id="patch-article"
-                         ng-include="patchNoteUrl"
-                         ng-init="patchNotesController.loadPatchNote( '2017-06-06' )">
-                </article>
-                <nav id="patch-history">
-                    <h2>RECENT PATCH NOTES</h2>
-                    <ul>
-                        <li ng-repeat="note in patchNotesController.notes.slice(0, 4)" />
-                            <a href="#patch-article" ng-click="patchNotesController.loadPatchNote( note.date )" >{{ note.name }}</a>
-                            <div class="date">{{ note.date }}</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+        <patch-notes-section></patch-notes-section>
         <stats-section></stats-section>
         <footer-section></footer-section>
     </section>
@@ -105,7 +89,7 @@
     <script src="angular/footer-section/footer-section.component.js"></script>
     <script src="angular/stats-section/stats-section.component.js"></script>
     <script src="angular/stats-section/player-stats/player-stats.component.js"></script>
-
+    <script src="angular/patch-notes-section/patch-notes.component.js"></script>
     <script src="static/script/popup.js"></script>
     <script src="static/script/hammer.min.js"></script>
     <script src="static/script/typed.min.js"></script>

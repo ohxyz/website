@@ -1,0 +1,17 @@
+<section id="patch-notes">
+    <div id="patch-nav-n-content" class="section-box">
+        <article id="patch-article"
+                 ng-include="patchNoteUrl"
+                 ng-init="$ctrl.loadPatchNote( '2017-06-06' )">
+        </article>
+        <nav id="patch-history">
+            <h2>RECENT PATCH NOTES</h2>
+            <ul>
+                <li ng-repeat="note in $ctrl.notes.slice(0, 4)" />
+                    <a href="#patch-article" ng-click="$ctrl.loadPatchNote( note.date )" >{{ note.name }}</a>
+                    <div class="date">{{ note.date }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
