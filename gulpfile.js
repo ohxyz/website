@@ -1,9 +1,29 @@
-/* Start of page */
+/* Start of file */
 
 let gulp = require( 'gulp' );
-let cleanCss = require( 'gulp-clean-css' );
-let uglify = require( 'gulp-uglify' );
-let rename = require( 'gulp-rename' );
+let gulpCleanCss = require( 'gulp-clean-css' );
+let gulpUglify = require( 'gulp-uglify' );
+let gulpRename = require( 'gulp-rename' );
+let gulpConcat = require( 'gulp-concat' );
+
+let srcScriptPath = 'src/static/script/';
+
+gulp.task( 'concat-js', () => {
+
+    let files = [ 'popup.js', '0.js' ];
+
+    files = files.map( fileName => {
+
+        return srcScriptPath + fileName;
+
+     } );
+
+    gulp.src( files )
+        .pipe( gulpConcat( 'concated.js' ) )
+        .pipe( gulp.dest( srcScriptPath ) );
+
+} );
+
 
 gulp.task( 'copy-assets', () => { 
 
@@ -21,6 +41,7 @@ gulp.task( 'copy-assets', () => {
 
 } );
 
+
 gulp.task( 'copy-min-js', () => { 
 
     let minJsFiles = 'src/static/script/*.min.js';
@@ -30,6 +51,7 @@ gulp.task( 'copy-min-js', () => {
         .pipe( gulp.dest( destPath ) );
 
 } );
+
 
 gulp.task( 'copy-others', () => { 
 
@@ -43,16 +65,19 @@ gulp.task( 'copy-others', () => {
 
 gulp.task( 'minify-js', () => { 
 
-    let jsFiles = [ 'src/static/script/*.js', '!src/static/script/*.min.js' ];
+    // let jsFiles = [ 'src/static/script/*.js', '!src/static/script/*.min.js' ];
+    let concatedJsFile = [ srcScriptPath + 'concated.js' ];
+
     let destPath = 'dist/static/script';
     let renameOptions = { suffix: '.min' }; 
 
-    gulp.src( jsFiles )
-        .pipe( uglify() )
-        .pipe( rename( renameOptions ) )
+    gulp.src( concatedJsFile )
+        .pipe( gulpUglify() )
+        .pipe( gulpRename( renameOptions ) )
         .pipe( gulp.dest( destPath ) );
 
 } );
+
 
 gulp.task( 'minify-css', () => {
 
@@ -61,20 +86,23 @@ gulp.task( 'minify-css', () => {
     let renameOptions = { suffix: '.min' }; 
 
     gulp.src( cssFiles )
-        .pipe( cleanCss() )
-        .pipe( rename( renameOptions ) )
+        .pipe( gulpCleanCss() )
+        .pipe( gulpRename( renameOptions ) )
         .pipe( gulp.dest( cssDest ) ); 
 
 } );
+
 
 let defaultTasks = [
 
     'copy-assets',
     'copy-min-js',
     'copy-others',
+    'concat-js',
     'minify-js',
     'minify-css'
 ];
 
 gulp.task( 'default', defaultTasks );
 
+/* End of file */
