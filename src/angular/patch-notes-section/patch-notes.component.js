@@ -20,7 +20,7 @@ angular
             
             this.loadPatchNote = function ( patchDate ) {
                 
-                $scope.patchNoteUrl = 'static/patch-notes/' + patchDate + '.html';
+                $scope.patchNoteUrl = '/static/patch-notes/' + patchDate + '.html';
 
             };
             

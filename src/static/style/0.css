@@ -231,12 +231,13 @@ h2 {
         }
     
     #mobile-menu {
+        
         position: fixed;
         display: none;
         top: 0;
         left: 0;
         bottom: 0;
-        width: 210px;
+        width: 68%;
         z-index: 100;
         background-color: rgba(0, 0, 0, 0.9);
         
@@ -289,11 +290,13 @@ h2 {
 
 #previews {
     overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
     .preview-box {
         position: relative;
-        min-width: 370px;
+        min-width: 350px;
         height: 120px;
         top: 10px; /* Give some space for inner content to have shadows */
     }
@@ -367,7 +370,6 @@ h2 {
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 36px;
-            border-radius: 2px;
         }
 
         #preview-1-bar {
@@ -393,7 +395,7 @@ h2 {
     }
     
     .map-images {  
-        width: 48%;
+        width: 47%;
         position: absolute;
         top: 80px;
         height: 300px;
@@ -404,12 +406,12 @@ h2 {
 
     #map-1 {
         background-image: url("./images/hollywood.jpg");
-        left: 0;
+        left: 16px;
     }
 
     #map-2 {
         background-image: url("./images/volskaya-industries.jpg");
-        right: 0;
+        right: 16px;
     }
         .map-title {
             position: absolute;
@@ -576,6 +578,9 @@ h2 {
             }
             
 #stats {
+
+    padding-left: 16px;
+    padding-right: 16px;
     
 }
     .stats-section-box {
@@ -614,6 +619,7 @@ h2 {
             }
 
     #stats h1 {
+
         padding: 12px 0;
         border-bottom: 6px #777 solid;
     }
@@ -1049,8 +1055,18 @@ footer {
         }
 
     #map-strategies {
+
         height: auto;
     }
+        #map-1 {
+
+            left: 0;
+        }
+
+        #map-2 {
+
+            right: 0;
+        }
 
         .map-images {
             position: relative;
