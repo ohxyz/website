@@ -122,6 +122,7 @@ h2 {
     min-width: 620px;
     max-width: 1180px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 
@@ -291,7 +292,7 @@ h2 {
 #previews {
     overflow: hidden;
     padding-left: 8px;
-    padding-right: px;
+    padding-right: 8px;
 }
 
     .preview-box {
@@ -303,7 +304,6 @@ h2 {
 
     #preview-1-box {
         float: left;
-        margin-right: 8px;
     }
         
         .preview-content {
@@ -322,7 +322,6 @@ h2 {
             
     #preview-2-box {
         float: right;
-        margin-right: 8px;
     }
 
     #preview-1{
@@ -502,7 +501,7 @@ h2 {
             height: 400px;
             min-width: 160px;
             border-radius: 4px;
-            margin: 0 12px;
+            margin: 0 8px;
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid #333;
             order:1;
