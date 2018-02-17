@@ -157,7 +157,7 @@ h2 {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba( 0, 0, 0, 0.1 );
+        background-color: rgba( 0, 0, 0, 0.9 );
         overflow: hidden;
         background-image: url("./images/pattern.png");
         z-index: 100; /* make sure it is over every element */
@@ -290,8 +290,8 @@ h2 {
 
 #previews {
     overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: px;
 }
 
     .preview-box {
@@ -303,6 +303,7 @@ h2 {
 
     #preview-1-box {
         float: left;
+        margin-right: 8px;
     }
         
         .preview-content {
@@ -321,6 +322,7 @@ h2 {
             
     #preview-2-box {
         float: right;
+        margin-right: 8px;
     }
 
     #preview-1{
@@ -406,12 +408,12 @@ h2 {
 
     #map-1 {
         background-image: url("./images/hollywood.jpg");
-        left: 16px;
+        left: 8px;
     }
 
     #map-2 {
         background-image: url("./images/volskaya-industries.jpg");
-        right: 16px;
+        right: 8px;
     }
         .map-title {
             position: absolute;
@@ -579,8 +581,8 @@ h2 {
             
 #stats {
 
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
     
 }
     .stats-section-box {
