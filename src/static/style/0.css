@@ -435,6 +435,8 @@ h2 {
     background-attachment: fixed;
     background-size: cover;
     background-position-y: center;
+    /* Fix for Chrome 67 for not showing fixed background */
+    transform: translate3d(0,0,0);
 }
 
 #motto {
