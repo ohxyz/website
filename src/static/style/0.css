@@ -903,31 +903,29 @@ footer {
         font-family: "Dongle Bold", arial, sans-serif;
         color: white;
         text-align: center;
-        font-size: 24px;
     }
     
         .like {
-            font-size: 24px;
+            font-size: 36px;
             padding-top: 20px;
-            padding-bottom: 5px;
             color: #eee;
         }
         
         .then {
-            font-size: 18px;
+            font-size: 24px;
             padding: 0;
-            color: #999;
+            color: #bdbdbd;
         }
         
         #email {
-            font-size: 20px;
+            font-size: 24px;
             padding-top: 20px;
             padding-bottom: 6px;
             color: #ffae4f;
         }
         
         #address {
-            font-size: 12px;
+            font-size: 20px;
             color: #999;
         }
         
