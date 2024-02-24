@@ -66,8 +66,8 @@ body
 
 @font-face {
     
-    font-family: Futura;
-    src: url("./fonts/Futura.ttf"), url("./fonts/Futura.woff");
+    font-family: "Dongle Bold";
+    src: url("./fonts/Dongle-Bold.ttf");
 }
 
 body
@@ -464,8 +464,9 @@ h2 {
         #this-is-winston {
             margin-top: 16px;
             text-align: center;
-            font-family: Futura;
-            font-size: 24px;
+            font-family: "Dongle Bold", arial, sans-serif;
+            line-height: 0.8;
+            font-size: 36px;
             /* TRADEOFF: The height value is set when screen becomes narrow */
             height: 145px;
             overflow: hidden;
@@ -519,13 +520,14 @@ h2 {
             }
             
             #patch-history .date {
-                padding-top: 10px;
+                padding-top: 4px;
             }
             
             #patch-history li {
-                font-family: "Futura", arial, sans-serif;
+                font-family: "Dongle Bold", arial, sans-serif;
                 border-bottom: 1px #666 solid;
-                padding: 20px 0;
+                font-size: 24px;
+                padding: 16px 0;
             }
         
         #patch-article {
@@ -535,6 +537,8 @@ h2 {
             padding-right: 20px;
             order: 2;
             flex: 5;
+            font-size: 24px;
+            font-family: "Dongle Bold", arial, sans-serif;
         }
             #patch-article h1 {
                 font-family: "Bebas Neue", arial, sans-serif;
@@ -551,20 +555,13 @@ h2 {
                 color: white;
                 font-size: 28px;
                 padding: 16px 0;
-                font-family: "Bebas Neue", arial, sans-serif;
             }
             
             #patch-article p {
                 padding: 14px 0;
                 line-height: 20px;
-                font-family: "Futura", arial, sans-serif;
             }
             
-            
-            #patch-article strong {
-                font-size: 16px;
-                font-weight: bold;
-            }
             
             #patch-article em {
                 font-style: italic;
@@ -572,7 +569,7 @@ h2 {
             
             #patch-article ul {
                 list-style: square;
-                font-family: "Futura", arial, sans-serif;
+
             }
         
             #patch-article li {
@@ -903,9 +900,10 @@ footer {
     #footer-content {
         padding-top: 20px;
         padding-bottom: 40px;
-        font-family: Futura;
+        font-family: "Dongle Bold", arial, sans-serif;
         color: white;
         text-align: center;
+        font-size: 24px;
     }
     
         .like {
