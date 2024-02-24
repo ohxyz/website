@@ -1,0 +1,26 @@
+{
+    "avartarUrl": "static/avartar.png",
+    
+    "name": "ohxyz-com",
+    
+    "gamesWon": 456,
+    
+    "featuredStats": {
+        
+        "eliminations - average": 24.4,
+        
+        "damage done - average": "6,718",
+        
+        "deaths - average": 9.5,
+        
+        "final blows - average": 10.16,
+        
+        "healing done - average": 36,
+        
+        "objective kills - average": 9.84,
+        
+        "objective time average": "01:24",
+        
+        "solo kills - average": 2.26
+    }
+}

@@ -1,0 +1,212 @@
+<!doctype html>
+<html ng-app="ohxyzApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Overwatch Winston - ohxyz.com</title>
+    <meta name="description" content="A Winston player of Overwatch" />
+    <meta name="author" content="ohxyz.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="static/style/images/website-icon.png" />
+    <link rel="stylesheet" href="static/style/0.css" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/app.js"></script>
+</head>
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <header id="highlights">
+        <div id="quotes-box"></div>
+        <nav id="top-nav">
+            <div class="section-box">
+                <ul>
+                    <li><a id="logo" href="/"></a></li>
+                    <li><a href="#previews">PREVIEWS</a></li>
+                    <li><a href="#map-strategies">STRATEGIES</a></li>
+                    <li><a href="#motto">MOTTO</a></li>
+                    <li><a href="#patch-notes">PATCH NOTES</a></li>
+                    <li><a href="#stats">STATS</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="mobile-logo" ></div>
+        <nav id="mobile-menu" class="shadow">
+            <ul>       
+                <li><a href="/">HOME</a></li>
+                <li><a href="#previews">PREVIEWS</a></li>
+                <li><a href="#map-strategies">STRATEGIES</a></li>
+                <li><a href="#motto">MOTTO</a></li>
+                <li><a href="#patch-notes">PATCH NOTES</a></li>
+                <li><a href="#stats">STATS</a></li>
+                <li><div id="overwatch-logo"></div></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="main">
+        <section id="previews" class="section-box">
+            <div id="preview-1-box" class="preview-box">    
+                <div id="preview-1" class="preview-content">
+                    <video id="official-trailer" width="180" autoplay >
+                        <source src="static/style/videos/official-intro-trailer.mp4" type="video/mp4">
+                        Your browser doesn't support HTML5 video tag.
+                    </video>
+                    <!-- <iframe id="trailer" src="https://www.youtube.com/embed/tR-mDxUpWts?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+                </div>
+                <div id="preview-1-bar" class="preview-bar">INTRO TRAILER</div>
+            </div>
+            <div id="preview-2-box" class="preview-box">
+                <div id="preview-2" class="preview-content">
+                    <a id="preview-2-play-icon" target="_blank" class="video-play-icon" href="https://www.youtube.com/watch?v=AJF4poR4MlA"></a>
+                    <img id="pro-game-play" src="static/style/images/pro-game-play.jpg" />
+                </div>
+                <div id="preview-2-bar" class="preview-bar">GAME PLAY</div>
+            </div>
+        </section>
+        <section id="map-strategies" class="section-box">
+            <h3 id="map-strategies-title">MAP STRATEGIES</h3>
+            <div id="map-1" class="map-images">
+                <div class="map-title">HOLLYWOOD</div>
+            </div>
+            <div id="map-2" class="map-images">
+                <div class="map-title">VOLSKAYA INDUSTRIES</div>
+            </div>
+        </section>
+        <section id="transparent-section"></section>
+        <section id="motto" class="section-box">
+            <div id="winston-description">
+                <h2 id="needs-winstons-title">THE WORLD NEEDS HEROS</h2>
+                <p id="this-is-winston">No matter your playstyle, there's a unique hero for you.
+                    <br />"To the former agents of Overwatch! This is <em>Winston</em>! Ha ha! ...obviously..."
+                </p>
+            </div>
+            <div id="winston-full-body"></div>
+        </section>
+        <section id="patch-notes" ng-controller="PatchNotes as patchNote">
+            <div id="patch-nav-n-content" class="section-box">
+                <article id="patch-article" 
+                         ng-include="patchNoteUrl"
+                         ng-init="patchNote.loadPatchNote( '23-05-2017' )">
+                </article>
+                <nav id="patch-history">
+                    <h2>RECENT PATCH NOTES</h2>
+                    <ul>
+                        <li>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '23-05-2017' )" >Patch 1.11.1.2</a>
+                            <div class="date">23/05/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '27-04-2017' )" >Patch 1.10.1.1</a>
+                            <div class="date">27/04/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '18-04-2017' )">Patch 1.10.0.1b</a>
+                            <div class="date">18/04/2017</a>
+                        </li>
+                        <li>
+                            <a href="#patch-article" ng-click="patchNote.loadPatchNote( '11-04-2017' )">Patch 1.10.0.1a</a>
+                            <div class="date">11/04/2017</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section id="stats" class="section-box" >
+            <player-stats></player-stats>
+            <section id="top-heros" class="stats-section-box">
+                <h1>TOP HEROS</h1>
+                <section id="top-heros-content">
+                    <ul>
+                        <li id="winston">
+                            <div class="hero-icon"></div>
+                            <div class="progress-bar">
+                                <div class="hero-name">WINSTON</div>
+                                <div class="progress"></div>
+                                <div class="time-played">100 HOURS</div>
+                            </div>
+                        </li>
+                        <li id="lucio">
+                            <div class="hero-icon"></div>
+                            <div class="progress-bar">
+                                <div class="hero-name">LUCIO</div>
+                                <div class="progress"></div>
+                                <div class="time-played">50 HOURS 36 MINUTES</div>
+                            </div>
+                        </li>
+                        <li id="reinhardt">
+                            <div class="hero-icon"></div>
+                            <div class="progress-bar">
+                                <div class="hero-name">REINHARDT</div>
+                                <div class="progress"></div>
+                                <div class="time-played">21 HOURS 15 MINUTES</div>
+                            </div>
+                        </li>
+                        <li id="zarya">
+                            <div class="hero-icon"></div>
+                            <div class="progress-bar">
+                                <div class="hero-name">ZARYA</div>
+                                <div class="progress"></div>
+                                <div class="time-played">39 HOURS </div>
+                            </div>
+                        </li>
+                        <li id="soldier-76">
+                            <div class="hero-icon"></div>
+                            <div class="progress-bar">
+                                <div class="hero-name">SOLDIER: 76</div>
+                                <div class="progress"></div>
+                                <div class="time-played">5 MINUTES</div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section id="career-stats" class="stats-section-box">
+                <h1>CAREER STATS</h1>
+                <section id="career-stats-content">
+                    <div id="left-column" class="career-stats-column"></div>
+                    <div id="middle-column" class="career-stats-column"></div>
+                    <div id="right-column" class="career-stats-column"></div>
+                </section>
+            </section>
+        </section>
+        <footer>
+            <section id="footer-content" class="section-box">
+                <div class="like">Like Winston?</div>
+                <div class="then">Join me in competitive play of Overwatch. Let's group up!</div>
+                <div class="like">Like this website?</div>
+                <div class="then">Email me about what you think and leave your phone number, I'll give you a call back.</div>
+                <div id="email">ohxyzcom@gmail.com</div>
+                <div id="address">Melbourne VIC Australia</div>
+                <div id="winston-abilities">
+                    <div id="tesla-canon" class="ability"></div>
+                    <div id="jump-pack" class="ability"></div>
+                    <div id="barrier-projector" class="ability"></div>
+                    <div id="primal-rage" class="ability"></div>
+                </div>
+            </section>
+        </footer>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>document.write('<script src="static/script/jquery.min.js"><\/script>');</script>
+    <script src="static/script/popup.js"></script>
+    <script src="static/script/hammer.min.js"></script>
+    <script src="static/script/typed.min.js"></script>
+    <script src="static/script/data.js"></script>
+    <script src="static/script/0.js"></script>
+    <!-- Google Analytics code -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-96323293-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
