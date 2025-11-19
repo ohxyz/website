@@ -1,0 +1,1154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*
+{
+    margin: 0 auto;
+}
+
+body
+{
+    margin: 0 auto;
+    padding: 0;
+}
+/* Reset ends */
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("./fonts/BebasNeue.ttf"), url("./fonts/BebasNeue.woff");
+}
+
+@font-face {
+    
+    font-family: "Dongle Bold";
+    src: url("./fonts/Dongle-Bold.ttf");
+}
+
+body
+{
+    max-width: 1920px;
+    /* min-width temp solves background images get cut 
+    off when horizontal scroll bar comes up or on mobile 
+    browsers on my iphone */
+    min-width: 620px;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Bebas Neue", arial, sans-serif;
+    color: #333333;
+}
+
+header {
+
+}
+
+
+section
+{
+    margin: 0 auto;
+}
+
+a {
+    color: #d88621;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffae4f;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 32px;
+}
+.shadow {
+    box-shadow: 2px 2px 2px 1px rgba(40, 40, 40, 0.3);
+}
+
+.section-width {
+    
+}
+
+.section-box {
+    /* COMPATIBLE : Use 620 to make 640px no scroll bar */
+    min-width: 620px;
+    max-width: 1180px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+#highlights {
+    position: absolute;
+    background-image: url("./images/winston-highlights.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 center;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+    #quotes-box {
+        position: absolute;
+        top: 4%;
+        right: 2%;
+        left: 55%;
+        font-size: 4.3vw;
+        color: rgba( 255, 255, 255, 0.9 );
+        text-shadow: 0 4px 4px rgba( 0, 0, 0, 1 );
+        text-align: left;
+        word-wrap: break-word;
+        bottom: 64px;
+        overflow: hidden;
+        display: block;
+    }
+    
+    #top-nav {
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba( 0, 0, 0, 0.9 );
+        overflow: hidden;
+        background-image: url("./images/pattern.png");
+        z-index: 100; /* make sure it is over every element */
+        width: 100%; /* Center absolute item in IE */
+    }
+    
+        #top-nav li {
+            float: left;
+        }
+            #top-nav #logo {
+                background-image: url("./images/logo.png");
+                background-repeat: no-repeat;
+                padding: 0;
+                margin-left: 7px;
+                margin-right: 7px;
+                background-size: 50%;
+                background-position: 50% 45%;
+                width: 52px;
+                display: block;
+                height: 52px;
+                opacity: 0.9;
+            }
+            
+            #top-nav #logo:hover {
+                background-color: rgba(0, 0, 0, 0);
+                opacity: 1;
+            }
+            
+            #top-nav a {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                padding-left: 20px;
+                padding-right: 20px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            #top-nav a:hover{
+                background-color: rgba(255, 255, 255, 1);
+                color: #333;
+            }
+
+    #mobile-logo {
+        position: fixed;
+        top: 25px;
+        left: 25px;
+        z-index: 101;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.7);
+        background-image: url("./images/logo.png");
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-position: center;
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+        border: 4px solid rgba(255, 255, 255, 0.7);
+        border-radius: 100px;
+        opacity: 0.8;
+        display: none;
+    }
+        
+        /* Removed #highlights fix the bug on mobile for inconsitent behavior */
+        #mobile-logo.mobile-logo-active {
+            /*background-color: transparent ;*/
+            box-shadow: none;
+            opacity: 1;
+        }
+    
+    #mobile-menu {
+        
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 68%;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.9);
+        
+    }    
+        #mobile-menu ul {
+            position: absolute;
+            top: 110px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: auto;
+        }
+
+            #mobile-menu a {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                padding: 14px 27px;
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            #mobile-menu a:hover{
+                background-color: rgba(255, 255, 255, 1);
+                color: #333;
+            }
+            
+            #overwatch-logo{
+                background-image: url("./images/overwatch-logo.png");
+                height: 70px;
+                background-size: 77%;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                border-bottom: 0;
+                cursor: default;
+                opacity: 0.2;
+            }
+            
+
+#main  {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#previews {
+    overflow: hidden;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+    .preview-box {
+        position: relative;
+        min-width: 350px;
+        height: 120px;
+        top: 10px; /* Give some space for inner content to have shadows */
+    }
+
+    #preview-1-box {
+        float: left;
+    }
+        
+        .preview-content {
+            width: 180px;
+            height: 100px;
+            background-color: white;
+            border-radius: 2px;
+            position: absolute;
+            box-shadow: 0 0 3px #333;
+        }
+        
+            #trailer {
+                width: 100%;
+                height: 100%;
+            }
+            
+    #preview-2-box {
+        float: right;
+    }
+
+    #preview-1{
+        left: 15px;
+    }
+    
+    #preview-2{
+        right: 15px;
+    }
+
+        #pro-game-play-link {
+            
+        }
+            #pro-game-play {
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+        .video-play-icon {
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            background-image:url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMjU2LDkyLjQ4MWM0NC40MzMsMCw4Ni4xOCwxNy4wNjgsMTE3LjU1Myw0OC4wNjRDNDA0Ljc5NCwxNzEuNDExLDQyMiwyMTIuNDEzLDQyMiwyNTUuOTk5cy0xNy4yMDYsODQuNTg4LTQ4LjQ0OCwxMTUuNDU1Yy0zMS4zNzIsMzAuOTk0LTczLjEyLDQ4LjA2NC0xMTcuNTUyLDQ4LjA2NHMtODYuMTc5LTE3LjA3LTExNy41NTItNDguMDY0QzEwNy4yMDYsMzQwLjU4Nyw5MCwyOTkuNTg1LDkwLDI1NS45OTlzMTcuMjA2LTg0LjU4OCw0OC40NDgtMTE1LjQ1M0MxNjkuODIxLDEwOS41NSwyMTEuNTY4LDkyLjQ4MSwyNTYsOTIuNDgxIE0yNTYsNTIuNDgxIGMtMTEzLjc3MSwwLTIwNiw5MS4xMTctMjA2LDIwMy41MThjMCwxMTIuMzk4LDkyLjIyOSwyMDMuNTIsMjA2LDIwMy41MmMxMTMuNzcyLDAsMjA2LTkxLjEyMSwyMDYtMjAzLjUyQzQ2MiwxNDMuNTk5LDM2OS43NzIsNTIuNDgxLDI1Niw1Mi40ODFMMjU2LDUyLjQ4MXogTTIwNi41NDQsMzU3LjE2MVYxNTkuODMzbDE2MC45MTksOTguNjY2TDIwNi41NDQsMzU3LjE2MXoiPjwvcGF0aD48L3N2Zz4K);
+            background-repeat: no-repeat;
+            height: 55px;
+            width: 55px;
+            background-position: center center;
+            margin-top: 12%;
+            margin-left: 35%;
+            opacity: 0.6;
+            background-color: white;
+            border-radius: 100px;
+            box-shadow: 0 0 5px #000;
+        }
+
+        .video-play-icon:hover {
+            opacity: 0.85;
+        }
+
+        .preview-bar {
+            position: absolute;
+            top: 25px;
+            z-index: -1;
+            color: white;
+            background-color: #444444;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 36px;
+        }
+
+        #preview-1-bar {
+            padding-right: 20px;
+            width: 370px;
+            text-align: right;
+        }
+
+        #preview-2-bar {
+            right: 0;
+            padding-left: 20px;
+            width: 330px;
+        }
+
+#map-strategies {
+    position: relative;
+    height: 380px;
+    margin-top: 20px;
+}
+    #map-strategies-title {
+        font-size: 48px;
+        text-align: center;
+    }
+    
+    .map-images {  
+        width: 47%;
+        position: absolute;
+        top: 80px;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px #bbb solid;
+    }
+
+    #map-1 {
+        background-image: url("./images/hollywood.jpg");
+        left: 8px;
+    }
+
+    #map-2 {
+        background-image: url("./images/volskaya-industries.jpg");
+        right: 8px;
+    }
+        .map-title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: white;
+            font-size: 28px;
+            font-style: italic;
+            padding: 12px 18px;
+            text-align: right;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+#transparent-section {
+    margin-top: 80px;
+    height: 400px;
+    background-image: url("./images/gibraltar.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-y: center;
+    /* Fix for Chrome 67 for not showing fixed background */
+    transform: translate3d(0,0,0);
+}
+
+#motto {
+    position: relative;
+    height: 480px;
+}
+
+    #winston-description {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 450px;
+        padding-top: 10%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+        #needs-winstons-title {
+            text-align: center;
+            font-size: 60px;
+            font-style: italic;
+            text-shadow: 0 4px 5px #aaa;
+        }
+
+        #this-is-winston {
+            margin-top: 16px;
+            text-align: center;
+            font-family: "Dongle Bold", arial, sans-serif;
+            line-height: 0.8;
+            font-size: 36px;
+            /* TRADEOFF: The height value is set when screen becomes narrow */
+            height: 145px;
+            overflow: hidden;
+        }
+        
+            #this-is-winston em {
+                color: #ffae4f;
+                text-transform: uppercase;
+            }
+
+    #winston-full-body {
+        position: absolute;
+        right: 0;
+        top: -130px;
+        height: 563px;
+        width: 450px;
+        background-image: url("./images/winston-full-body.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+#patch-notes {
+    background-image: url("./images/patch-notes-background.png");
+    padding-top: 48px;
+    padding-bottom: 32px;
+    color: rgba(255, 255, 255, 1);
+    display: block; /* Not to show until ajax content loaded */
+    overflow: hidden; /* temp solution for patch content overflows when zoom out */
+}
+    #patch-nav-n-content{
+        display: flex;
+    }   
+        #patch-history {
+            padding: 24px 16px;
+            height: 400px;
+            min-width: 160px;
+            border-radius: 4px;
+            margin: 0 8px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            order:1;
+            flex:1;
+        }
+            #patch-history h2{
+                border-bottom: 4px #aaa solid;
+                font-size: 28px;
+            }
+            
+            #patch-history a {
+                display: block;
+            }
+            
+            #patch-history .date {
+                padding-top: 4px;
+            }
+            
+            #patch-history li {
+                font-family: "Dongle Bold", arial, sans-serif;
+                border-bottom: 1px #666 solid;
+                font-size: 24px;
+                padding: 16px 0;
+            }
+        
+        #patch-article {
+            font-family: arial, sans-serif;
+            font-size: 16px;
+            padding-left: 32px;
+            padding-right: 20px;
+            order: 2;
+            flex: 5;
+            font-size: 24px;
+            font-family: "Dongle Bold", arial, sans-serif;
+        }
+            #patch-article h1 {
+                font-family: "Bebas Neue", arial, sans-serif;
+                font-size: 40px;
+                font-style: italic;
+                color: white;
+            }
+            
+            #patch-article  {
+                
+            }
+            
+            #patch-article h2 {
+                color: white;
+                font-size: 28px;
+                padding: 16px 0;
+            }
+            
+            #patch-article p {
+                padding: 14px 0;
+                line-height: 20px;
+            }
+            
+            
+            #patch-article em {
+                font-style: italic;
+            }
+            
+            #patch-article ul {
+                list-style: square;
+
+            }
+        
+            #patch-article li {
+                line-height: 24px;
+
+            }
+            
+#stats {
+
+    padding-left: 8px;
+    padding-right: 8px;
+    
+}
+    .stats-section-box {
+        padding-top: 60px;
+    }
+    
+    #profile {
+        overflow: hidden;
+        
+    }
+        #player-avatar {
+            float: left;
+
+        }
+        
+            #player-avatar img{
+                width: 96px;
+                height: 96px;
+            }
+            
+        
+        #player-details {
+            float: left;
+            padding-left: 20px;
+        }
+        
+            #player-name {
+                font-size: 64px;
+                font-style: italic;
+            }
+            
+            #games-won {
+                font-size: 24px;
+                padding-left: 4px;
+                color: #ffae4f;
+            }
+
+    #stats h1 {
+
+        padding: 12px 0;
+        border-bottom: 6px #777 solid;
+    }
+    
+    #featured-stats {
+        
+    }   
+        #featured-stats-content {
+            /* Hide the ul's additional 2% of 102% */
+            overflow: hidden;
+        }
+        
+        #featured-stats ul{
+            overflow: hidden;
+            width: 102%;
+        }
+            #featured-stats li{
+                float: left;
+                width: 23%;
+                /* Use 164px for .featured-stats-text wrapping into 2 lines */
+                height: 164px;
+                background-color: #444444;
+                margin-right: 2%;
+                margin-top: 26px;
+                border-radius: 2px;
+                position: relative; /* for .featured-stats-icon */
+            }
+            
+                .featured-stats-icon {
+                    position: absolute;
+                    width: 160px;
+                    height: 160px;
+                    top: -30px;
+                    right: -30px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    opacity: 0.2;
+                }
+                
+                #eliminations-average{
+                    background-image: url("./images/eliminations-average.png");
+                }
+                
+                #damage-done-average {
+                    background-image: url("./images/damage-done-average.png");
+                }
+                
+                #deaths-average {
+                    background-image: url("./images/deaths-average.png");
+                }
+                
+                #final-blows-average {
+                    background-image: url("./images/final-blows-average.png");
+                }
+                
+                #healing-done-average {
+                    background-image: url("./images/healing-done-average.png");
+                }
+                
+                #objective-kills-average {
+                    background-image: url("./images/objective-kills-average.png");
+                }
+                
+                #objective-time-average {
+                    background-image: url("./images/objective-time-average.png");
+                }
+                
+                #solo-kills-average {
+                    background-image: url("./images/solo-kills-average.png");
+                }
+                
+                .featured-stats-number {
+                    padding-top: 56px;
+                    padding-left: 20px;
+                    color: white;
+                    font-size: 64px;
+                    font-style: italic;
+                    opacity: 0.9;
+                }
+                
+                .featured-stats-text {
+                    color: white;
+                    font-size: 22px;
+                    padding-left: 24px;
+                    padding-top: 0;
+                    height: 100px;
+                    opacity: 0.6
+                }
+        
+    #top-heros {
+        
+    }   
+        #top-heros-content {
+            padding-top: 32px;
+            
+        }
+            #top-heros-content ul {
+                
+            }
+                #top-heros-content li {
+                    position: relative;
+                    height: 72px;
+                }
+
+                .hero-icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 64px;
+                    height: 64px;
+                    border: 1px #666 solid;
+                    border-radius: 4px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                
+                #winston .hero-icon {
+                    background-image: url("./images/winston-icon.png");
+                }
+                
+                #lucio .hero-icon {
+                    background-image: url("./images/lucio-icon.png");
+                }
+                
+                #reinhardt .hero-icon {
+                    background-image: url("./images/reinhardt-icon.png");
+                }
+                
+                #zarya .hero-icon {
+                    background-image: url("./images/zarya-icon.png");
+                }
+                
+                #soldier-76 .hero-icon {
+                    background-image: url("./images/soldier-76-icon.png");
+                }
+                
+                .progress-bar {
+                    position: absolute;
+                    top: 0;
+                    left: 72px;
+                    right: 0;
+                    height: 64px;
+                    background-color: #888888;
+                    border: 1px #555 solid;
+                    border-radius: 4px;
+                    box-shadow: inset 0 0 20px #444444;
+                }
+                    .hero-name {
+                        position: absolute;
+                        top: 16px;
+                        font-size: 38px;
+                        font-style: italic;
+                        left: 20px;
+                        color: white;
+                        z-index: 1;
+                    }
+                
+                    .progress {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        right: 5px;
+                        bottom: 5px;
+                        border-radius: 4px;
+                        border: 1px #bbb solid;
+                        background-color: #aaa;
+                        box-shadow: 2px 2px 4px #333333;
+                        animation-duration: 1s;
+                        animation-name: progressing;
+                    }
+                    
+                    .progressing-start {
+                        
+                    }
+                    
+                    @keyframes progressing {
+                        from {
+                            right: 100%;
+                        }
+                    }
+                    
+                    #lucio .progress {
+                        right: 50%;
+                    }
+
+                    #reinhardt .progress {
+                        right: 80%;
+                    }
+
+                    #zarya .progress {
+                        right: 60%;
+                    }
+                    
+                    #soldier-76 .progress {
+                        right: 100%;
+                        border: 0; 
+                    }
+                    
+                    .time-played {
+                        position: absolute;
+                        top: 24px;
+                        right: 20px;
+                        font-size: 24px;
+                        color: white;
+                        z-index: 1;
+                    }
+    
+    #career-stats {
+        
+    }
+        #career-stats-content {
+            padding-top: 32px;
+            position: relative;
+            height: 740px;
+        }
+            .career-stats-column {
+                position: absolute;
+                top: 32px;
+                width: 32.5%;
+            }
+            
+            #left-column {
+                left: 0;
+            }
+            
+            #middle-column {
+                left: 33.75%;
+            }
+            
+            #right-column {
+                right: 0;
+            }
+                .career-stats-box {
+                    margin-bottom: 16px; 
+                }
+                
+                .career-stats-box-title {
+                    padding-top: 16px;
+                    padding-left: 24px;
+                    padding-bottom: 8px;
+                    font-size: 32px;
+                    background-color: #cccccc;
+                }
+                
+                .career-stats-box-content {
+                    background-color: #eeeeee;
+                    padding: 14px 24px;
+                    font-size: 20px;
+                }
+                    
+                    .career-stats-box-content dl{
+                        overflow: hidden;
+                    }
+                        
+                    .career-stats-box-content dt {
+                        float: left;
+                        color: #666;
+                        width: 75%;
+                        padding: 4px 0;
+                        
+                    }
+                    
+                    .career-stats-box-content dd {
+                        float: right;
+                        color: #444;
+                        width: 25%;
+                        text-align: right;
+                        padding: 4px 0;
+                    }
+            
+footer {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-image: url("./images/footer-background.jpg");
+
+}
+
+    #footer-content {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        font-family: "Dongle Bold", arial, sans-serif;
+        color: white;
+        text-align: center;
+    }
+    
+        .like {
+            font-size: 36px;
+            padding-top: 20px;
+            color: #eee;
+        }
+        
+        .then {
+            font-size: 24px;
+            padding: 0;
+            color: #bdbdbd;
+        }
+        
+        #email {
+            font-size: 24px;
+            padding-top: 20px;
+            padding-bottom: 6px;
+            color: #ffae4f;
+        }
+        
+        #address {
+            font-size: 20px;
+            color: #999;
+        }
+        
+        #winston-abilities {
+            margin-top: 22px;
+            margin-bottom: 0;
+
+        }
+            .ability {
+                width: 48px;
+                height: 48px;
+                margin: 0 8px;
+                border: 2px white solid;
+                border-radius: 26px;
+                background-position: 50% 50%;
+                background-size: 75%;
+                background-repeat: no-repeat;
+                display: inline-block;
+                opacity: 0.8;
+            }
+            
+            #winston-abilities #tesla-canon {
+                background-image: url("./images/tesla-canon-icon.png");
+            }
+            
+            #jump-pack {
+                background-image: url("./images/jump-pack-icon.png");
+            }
+            
+            #barrier-projector {
+                background-image: url("./images/barrier-projector-icon.png");
+            }
+            
+            #primal-rage {
+                background-image: url("./images/primal-rage-icon.png");
+            }
+
+            
+/* START: Media query 768 */
+
+@media only screen and (max-width: 768px) {
+    
+    #top-nav {
+        display: none;
+    }
+
+    #mobile-logo {
+        display: block;
+    }
+
+    body {
+        min-width: 0;
+    }
+        
+    .section-box {
+        min-width: 0;
+        max-width: 740px;
+    }
+
+    #highlights {
+        background-size: 165%;
+        background-position: 0 0;
+        padding-top: 74%;
+        height: auto;
+        position: relative;
+    }
+        
+        #quotes-box{
+            display: none;
+        }
+        
+        
+    #main {
+        position: relative;
+        
+    }
+        /* Set to none temporarily */
+        #mobile-menu li:nth-child(2){
+            display: none;
+        }
+        
+        #previews {
+            overflow: auto;
+            /* Set to none temporarily */
+            display: none;
+        }
+
+        .preview-box {
+            min-width: auto;
+            height: auto;
+            margin: 20px auto;
+            width: 95%;
+        }
+        
+        #preview-1-box {
+            float: none;
+        }
+        
+        #preview-2-box {
+            float: none;
+        }
+
+        .preview-content{
+            
+            width: auto;
+            position: static;
+            height: 300px;
+        }
+        
+        #preview-1-bar {
+            width: auto;
+        }
+        
+        #preview-2-bar {
+            width: auto;
+        }
+        
+        .preview-bar {
+            z-index: 10;
+            border-radius: 0;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+    #map-strategies {
+
+        height: auto;
+    }
+        #map-1 {
+
+            left: 0;
+        }
+
+        #map-2 {
+
+            right: 0;
+        }
+
+        .map-images {
+            position: relative;
+            width: 95%;
+            margin: 5% auto;
+            top: 0;
+            height: auto;
+            padding-bottom: 56%;
+        }
+        
+
+    #motto {
+        height: auto;
+    }
+
+    #winston-full-body {
+        display: none;
+
+    }
+
+    #transparent-section {
+        margin-top: 8%;
+        background-attachment: scroll;
+        background-position: 50% 60%;
+        height: 200px;
+    }
+
+    #winston-description {
+        position: static;
+        right: 0;
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+
+    #this-is-winston {
+        height: auto;
+    }
+
+    #patch-notes {
+        padding-bottom: 0;
+    }
+
+        #patch-nav-n-content {
+            display: block;
+        }
+            
+            #patch-history  {
+                border-radius: 0;
+                margin: 32px 0 0 0;
+                border-left: 0;
+                border-right: 0;
+            }
+        
+
+    #featured-stats li {
+        width: 48%;
+    }
+
+    #player-avatar {
+        display: none;
+    }
+
+    #player-details {
+        padding-left: 0
+    }
+
+    .hero-name {
+        display: none;
+    }
+
+    .time-played {
+        font-size: 20px;
+    }
+
+    #career-stats-content {
+        height: auto;
+    }
+        .career-stats-column {
+            position: static;
+            top: 0;
+            width: auto;
+        }
+}
+/* END: Media query 768 */
+
+/* End of file */

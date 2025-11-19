@@ -32,7 +32,7 @@ gulp.task( 'copy-assets', () => {
     assetFolderNames.forEach( folderName => {
 
         let files = `src/static/style/${folderName}/*`;
-        let destPath = `dist/static/style/${folderName}`;
+        let destPath = `docs/static/style/${folderName}`;
 
         gulp.src( files )
             .pipe( gulp.dest( destPath ) );
@@ -45,7 +45,7 @@ gulp.task( 'copy-assets', () => {
 gulp.task( 'copy-min-js', () => { 
 
     let minJsFiles = 'src/static/script/*.min.js';
-    let destPath = 'dist/static/script';
+    let destPath = 'docs/static/script';
 
     gulp.src( minJsFiles )
         .pipe( gulp.dest( destPath ) );
@@ -56,7 +56,7 @@ gulp.task( 'copy-min-js', () => {
 gulp.task( 'copy-others', () => { 
 
     let patchNotesFiles = 'src/static/patch-notes/*';
-    let destPath = 'dist/static/patch-notes';
+    let destPath = 'docs/static/patch-notes';
 
     gulp.src( patchNotesFiles )
         .pipe( gulp.dest( destPath ) );
@@ -68,7 +68,7 @@ gulp.task( 'minify-js', () => {
     // let jsFiles = [ 'src/static/script/*.js', '!src/static/script/*.min.js' ];
     let concatedJsFile = [ srcScriptPath + 'concated.js' ];
 
-    let destPath = 'dist/static/script';
+    let destPath = 'docs/static/script';
     let renameOptions = { suffix: '.min' }; 
 
     gulp.src( concatedJsFile )
@@ -82,7 +82,7 @@ gulp.task( 'minify-js', () => {
 gulp.task( 'minify-css', () => {
 
     let cssFiles = 'src/static/style/*.css';
-    let cssDest = 'dist/static/style';
+    let cssDest = 'docs/static/style';
     let renameOptions = { suffix: '.min' }; 
 
     gulp.src( cssFiles )
