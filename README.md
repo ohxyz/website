@@ -1,16 +1,22 @@
 # OHXYZ Website
 
-This is a website about Overwatch character Winston!
+A fan website for Overwatch character Winston!
 
-# Dev
+## Quick Start
 
-Use Node 8
-
-
-# Build
-
-It does not create a full dist build, files are cherry picked into `docs` folder. So DO NOT DELETE `docs`
-
-```
+```bash
+npm install
 npm run build
 ```
+
+## Development
+
+For detailed development instructions, build process, and important warnings, see [DEV_NOTES.md](DEV_NOTES.md).
+
+## Deployment
+
+The site is deployed via GitHub Pages from the `docs/` folder.
+
+## License
+
+ISC
